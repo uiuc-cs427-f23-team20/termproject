@@ -9,13 +9,15 @@ The code for CS427 Android app.
 | Name | NetID | GitHub ID | Role | Experience |
 | ------------- | ------------- | ------------| ------------- | ------------- |
 | Kharissa Fernando Smith | kf17 | kharissa | TBD | Python, Javascript, React, Full-Stack Dev |  
-| | | | | |
-| | | | | |
-| | | | | |
-| | | | | |
-| | | | | |
-| | | | | |
-| | | | | |
+| Tony Jiao | | | | |
+| Ryan Kuhlmann | | | | |
+| Zeren Lu | | | | |
+| SiCheng Meng | | | | |
+| Uttam Roy | | | | |
+| Qirun Tang | | | | |
+| Jun Yang | | | | |
+| Luxia Yin | | | | |
+| Lingming Zhang | | | | |
 <br/>
 
 <b>Weekly Progress Reports</b>
