@@ -12,7 +12,7 @@ The code for CS427 Android app.
 | Tony Jiao | | | | |
 | Ryan Kuhlmann |rkuhlm2|rkuhlm|Developer|Java, Pyhton|
 | Zeren Lu | zerenlu2 | OtisL99 | Developer | |
-| SiCheng Meng | meng29 | 883km | Manager | |
+| SiCheng Meng | meng29 | 883km | Manager | Java, Python |
 | Uttam Roy | uroy  | uroy007 | Developer | Java, Python |
 | Qirun Tang | | | | |
 | Luxia Yin | luxiay2 | luxiay | Developer | |
