@@ -13,7 +13,7 @@ The code for CS427 Android app.
 | Ryan Kuhlmann |rkuhlm2|rkuhlm|Delevoper|Java, Pyhton|
 | Zeren Lu | | | | |
 | SiCheng Meng | | | | |
-| Uttam Roy | | | | |
+| Uttam Roy | uroy  | uroy007 | Developer | Java, Python |
 | Qirun Tang | | | | |
 | Luxia Yin | | | | |
 <br/>
