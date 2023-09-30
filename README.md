@@ -10,12 +10,12 @@ The code for CS427 Android app.
 | ------------- | ------------- | ------------| ------------- | ------------- |
 | Kharissa Fernando Smith | kf17 | kharissa | TBD | Python, Javascript, React, Full-Stack Dev |  
 | Tony Jiao | | | | |
-| Ryan Kuhlmann |rkuhlm2|rkuhlm|Delevoper|Java, Pyhton|
-| Zeren Lu | | | | |
-| SiCheng Meng | | | | |
+| Ryan Kuhlmann |rkuhlm2|rkuhlm|Developer|Java, Pyhton|
+| Zeren Lu | zerenlu2 | OtisL99 | Developer | |
+| SiCheng Meng | meng29 | 883km | Manager | |
 | Uttam Roy | uroy  | uroy007 | Developer | Java, Python |
 | Qirun Tang | | | | |
-| Luxia Yin | | | | |
+| Luxia Yin | luxiay2 | luxiay | Developer | |
 <br/>
 
 <b>Weekly Progress Reports</b>
@@ -23,12 +23,12 @@ The code for CS427 Android app.
 </br>
 Meeting time: Saturday, Sep 30 2:00 PM CDT
 </br>
-Meeting location (zoom link):
+Meeting location (zoom link): https://illinois.zoom.us/j/83663301315?pwd=Q3dDSThPZExtZ3c1UjV6Zy8zdC9FUT09
 </br>
 </br>
 <b>Week 1</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: kf17, luxiay2, uroy, meng29, zerenlu2, rkuhlm2
 </br>
 Meeting notes: Explain the overall team progress and a summary of discussion
 </br>
