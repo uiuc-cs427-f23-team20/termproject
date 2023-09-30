@@ -10,7 +10,7 @@ The code for CS427 Android app.
 | ------------- | ------------- | ------------| ------------- | ------------- |
 | Kharissa Fernando Smith | kf17 | kharissa | TBD | Python, Javascript, React, Full-Stack Dev |  
 | Tony Jiao | | | | |
-| Ryan Kuhlmann | | | | |
+| Ryan Kuhlmann |rkuhlm2|rkuhlm|Delevoper|Java|
 | Zeren Lu | | | | |
 | SiCheng Meng | | | | |
 | Uttam Roy | | | | |
