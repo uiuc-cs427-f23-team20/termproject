@@ -15,9 +15,7 @@ The code for CS427 Android app.
 | SiCheng Meng | | | | |
 | Uttam Roy | | | | |
 | Qirun Tang | | | | |
-| Jun Yang | | | | |
 | Luxia Yin | | | | |
-| Lingming Zhang | | | | |
 <br/>
 
 <b>Weekly Progress Reports</b>
