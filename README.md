@@ -15,7 +15,7 @@ The code for CS427 Android app.
 | SiCheng Meng | meng29 | 883km | Manager | Java, Python |
 | Uttam Roy | uroy  | uroy007 | Developer | Java, Python |
 | Qirun Tang | | | | |
-| Luxia Yin | luxiay2 | luxiay | Developer | |
+| Luxia Yin | luxiay2 | luxiay | Developer | Python, Java |
 <br/>
 
 <b>Weekly Progress Reports</b>
