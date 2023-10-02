@@ -8,14 +8,13 @@ The code for CS427 Android app.
 <br/>
 | Name | NetID | GitHub ID | Role | Experience |
 | ------------- | ------------- | ------------| ------------- | ------------- |
-| Kharissa Fernando Smith | kf17 | kharissa | TBD | Python, Javascript, React, Full-Stack Dev |  
-| Tony Jiao | | | | |
-| Ryan Kuhlmann | | | | |
-| Zeren Lu | zerenlu2 | OtisL99 | Developer | Java, React, JS, Database |
-| SiCheng Meng | | | | |
-| Uttam Roy | | | | |
-| Qirun Tang | | | | |
-| Luxia Yin | | | | |
+| Kharissa Fernando Smith | kf17 | kharissa | Tech Lead | Python, Javascript, React, Full-Stack Dev |  
+| Tony Jiao | tonyj2 | 61070577 | Developer | Java, Python, Javascript |
+| Ryan Kuhlmann |rkuhlm2|rkuhlm|Developer|Java, Pyhton|
+| Zeren Lu | zerenlu2 | OtisL99 | Developer | Java, Python, Database |
+| SiCheng Meng | meng29 | 883km | Manager | Java, Python |
+| Uttam Roy | uroy  | uroy007 | Developer | Java, Python |
+| Luxia Yin | luxiay2 | luxiay | Developer | Python, Java |
 <br/>
 
 <b>Weekly Progress Reports</b>
@@ -23,23 +22,23 @@ The code for CS427 Android app.
 </br>
 Meeting time: Saturday, Sep 30 2:00 PM CDT
 </br>
-Meeting location (zoom link):
+Meeting location (zoom link): https://illinois.zoom.us/j/83663301315?pwd=Q3dDSThPZExtZ3c1UjV6Zy8zdC9FUT09
 </br>
 </br>
 <b>Week 1</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: kf17, luxiay2, uroy, meng29, zerenlu2, rkuhlm2
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: In our first meeting, we indrouced ourselves to the group, assigned roles to group members, and we talked about Milestone 1. We agreed that our weekly meetings moving forward will take place on Thursdays at 8:00 PM CDT.
 </br>
 | NetID | Progress from last week | Tasks for next week |
 | ---------------| --------------------------------| ----------------------|
-| | | |
-| | | |
-| | | |
-| | | |
-| | | |
-| | | |
+| kf17 | N/A | Prep for Milestone 2 |
+| luxiay2 | N/A | Prep for Milestone 2 |
+| uroy | N/A | Prep for Milestone 2  |
+| meng29 | N/A | Prep for Milestone 2  |
+| zerenlu2 | N/A | Prep for Milestone 2  |
+| rkuhlm2 | N/A | Prep for Milestone 2 |
 | | | |
 | | | |
 </br>
