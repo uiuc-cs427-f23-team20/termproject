@@ -33,12 +33,12 @@ Meeting notes: In our first meeting, we indrouced ourselves to the group, assign
 </br>
 | NetID | Progress from last week | Tasks for next week |
 | ---------------| --------------------------------| ----------------------|
-| | | |
-| | | |
-| | | |
-| | | |
-| | | |
-| | | |
+| kf17 | N/A | Prep for Milestone 2 |
+| luxiay2 | N/A | Prep for Milestone 2 |
+| uroy | N/A | Prep for Milestone 2  |
+| meng29 | N/A | Prep for Milestone 2  |
+| zerenlu2 | N/A | Prep for Milestone 2  |
+| rkuhlm2 | N/A | Prep for Milestone 2 |
 | | | |
 | | | |
 </br>
