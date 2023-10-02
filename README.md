@@ -29,7 +29,7 @@ Meeting location (zoom link): https://illinois.zoom.us/j/83663301315?pwd=Q3dDSTh
 </br>
 Members present: kf17, luxiay2, uroy, meng29, zerenlu2, rkuhlm2
 </br>
-Meeting notes: In our first meeting, we indrouced ourselves to the group, assigned roles to group members, and we talked about milestone 1.
+Meeting notes: In our first meeting, we indrouced ourselves to the group, assigned roles to group members, and we talked about Milestone 1. We agreed that our weekly meetings moving forward will take place on Thursdays at 8:00 PM CDT.
 </br>
 | NetID | Progress from last week | Tasks for next week |
 | ---------------| --------------------------------| ----------------------|
