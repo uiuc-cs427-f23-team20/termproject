@@ -48,12 +48,12 @@ Meeting notes: In our first meeting, we indrouced ourselves to the group, assign
 Members present: kf17, luxiay2, uroy, meng29, zerenlu2, rkuhlm2, tonyj2
 </br>
 Meeting notes: 
-In this week's meeting we discussed the four tasks in milestone 2.
-Task 1: Completed through discussion.
-Task 2: We studied use case 1 together as an example, and delegated responsibilities to individual members for rest of the use cases.
-Task 3: Briefly discussed some obvious classes to be included in the class diagram. Tony will take a further look during the weekend, while other members will offer help if needed.
-Task 4: To be discussed next Tuesday after we have a blueprint of the class diagram.
-Top save more time for task 4, next team meeting will be on Tuesday instead of Thursday. An extra optional meeting this weekend may be needed to discuss task 3.
+In this week's meeting we discussed the four tasks in milestone 2. </br>
+Task 1: Completed through discussion. </br>
+Task 2: We studied use case 1 together as an example, and delegated responsibilities to individual members for rest of the use cases. </br>
+Task 3: Briefly discussed some obvious classes to be included in the class diagram. Tony will take a further look during the weekend, while other members will offer help if needed. </br>
+Task 4: To be discussed next Tuesday after we have a blueprint of the class diagram. </br>
+To save more time for task 4, next team meeting will be on Tuesday instead of Thursday. An extra optional meeting this weekend may be needed to discuss task 3.
 </br>
 | NetID | Progress from last week | Tasks for next week |
 | ---------------| --------------------------------| ----------------------|
