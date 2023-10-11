@@ -69,13 +69,16 @@ To save more time for task 4, next team meeting will be on Tuesday instead of Th
 
 <b>Week 3</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: kf17, luxiay2, uroy, meng29, rkuhlm2, tonyj2
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes:
+Prior today's meeting, each team members had finished their part on milestone 2 task 2 and 3. </br>
+In today's meeting, we reviewed and improved milestone2 task 2 use cases tand task 3 class diagram together. All participants shared their valuable opinions. </br>
+We also came up with a blueprint for task 4, which will be finished by end of the week.
 </br>
 | NetID | Progress from last week | Tasks for next week |
 | ---------------| --------------------------------| ----------------------|
-| | | |
+| meng29 | Completed use case 2. Reviewed other use cases and class diagram during the meeting. | Start working on milestone 3. |
 | | | |
 | | | |
 | | | |
