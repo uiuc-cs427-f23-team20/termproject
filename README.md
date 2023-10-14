@@ -69,7 +69,7 @@ To save more time for task 4, next team meeting will be on Tuesday instead of Th
 
 <b>Week 3</b>
 </br>
-Members present: kf17, luxiay2, uroy, meng29, rkuhlm2, tonyj2
+Members present: kf17, luxiay2, uroy, meng29, zerenlu2, rkuhlm2, tonyj2
 </br>
 Meeting notes:
 Prior today's meeting, each team members had finished their part on milestone 2 task 2 and 3. </br>
