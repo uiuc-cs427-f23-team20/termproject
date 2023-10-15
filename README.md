@@ -60,7 +60,7 @@ To save more time for task 4, next team meeting will be on Tuesday instead of Th
 | meng29 |Compledted milestone 2 task 1 and 2.1  | Finish use case 2. Help with class diagram if needed. Research on task 4. |
 |luxiay2 |Compledted milestone 2 task 1 and 2.1 |Finish use case 4. Research on task 3 and 4. |
 | zerenlu2 |Compledted milestone 2 task 1 and 2.1 |Finish use case 3. Research on task 4. |
-| | | |
+|rkuhlm2 |Compledted milestone 2 task 1 and 2.1 |Finish use case 5. Research on Transition Graph. |
 | | | |
 | | | |
 | | | |
