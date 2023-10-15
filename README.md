@@ -81,7 +81,7 @@ We also came up with a blueprint for task 4, which will be finished by end of th
 | meng29 | Completed use case 2. Reviewed other use cases and class diagram during the meeting. | Start working on milestone 3. |
 | luxiay2 |Completed use case 4. Reviewed and discussed other use cases and class diagram during the meeting. | Start working on milestone 3. |
 | zerenlu2 |Completed use case 3. Reviewed other use cases and class diagram during the meeting. Draw the component transition graph. | Start working on milestone 3. |
-| | | |
+|rkuhlm2 |Completed use case 5. Work on transition graph.|Start working on milestone 3. |
 | | | |
 | | | |
 | | | |
