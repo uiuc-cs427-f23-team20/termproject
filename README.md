@@ -9,7 +9,7 @@ The code for CS427 Android app.
 | Name | NetID | GitHub ID | Role | Experience |
 | ------------- | ------------- | ------------| ------------- | ------------- |
 | Kharissa Fernando Smith | kf17 | kharissa | Tech Lead | Python, Javascript, React, Full-Stack Dev |  
-| Tony Jiao | tonyj2 | 61070577 | Developer | Java, Python, Javascript |
+| Tony Jiao | tonyj2 | tonydfth | Developer | Java, Python, Javascript |
 | Ryan Kuhlmann |rkuhlm2|rkuhlm|Developer|Java, Pyhton|
 | Zeren Lu | zerenlu2 | OtisL99 | Developer | Java, Python, Database |
 | SiCheng Meng | meng29 | 883km | Manager | Java, Python |
