@@ -63,7 +63,7 @@ To save more time for task 4, next team meeting will be on Tuesday instead of Th
 |rkuhlm2 |Completed milestone 2 task 1 and 2.1 |Finish use case 5. Research on Transition Graph. |
 | kharissa | Completed milestone 2 task 1 and 2.1 | Finish use case 3. Research on task 4. |
 |tonyj2 | Completed milestone 2 task 1 and 2.1 |Create the class diagram. Research on task 4. Review other tasks |
-| | | |
+|uroy  | Participated and discussed on use-cases. |Research on Transition Graph. |
 | | | |
 </br>
 
@@ -84,7 +84,7 @@ We also came up with a blueprint for task 4, which will be finished by end of th
 |rkuhlm2 |Completed use case 5. Work on transition graph.|Start working on milestone 3. |
 | kharissa | Completed use case 3 and updated relationships for class diagram graph.| Start working on milestone 3.|
 | tonyj2 |Created an initial version of the class diagram. Reviewed and edited the use cases |Start working on milestone 3 |
-| | | |
+| uroy | Participated and discussed on use-cases. | Reviewd different tasks.|
 | | | |
 </br>
 
