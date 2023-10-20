@@ -90,13 +90,13 @@ We also came up with a blueprint for task 4, which will be finished by end of th
 
 <b>Week 4</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: kf17, luxiay2, uroy, meng29, rkuhlm2, tonyj2
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: In this week's meeting we discussed the three tasks in milestone 3 and dedicated responsibilities. Detailed meeting notes can be found in this Google doc using your uiuc credential : https://docs.google.com/document/d/1yzHaqCKl3npY1aOT5zAp4GVwfj9U7jDcFGs-nj_70xc/edit?usp=sharing
 </br>
 | NetID | Progress from last week | Tasks for next week |
 | ---------------| --------------------------------| ----------------------|
-| | | |
+| meng29 | Went over milestone 3 requirments with team as the starting point. | Work on milestone 3 task 2 with Tony. |
 | | | |
 | | | |
 | | | |
