@@ -1,4 +1,4 @@
-package com.example.cs427groupproject;
+package edu.uiuc.cs427app;
 
 import androidx.appcompat.app.AppCompatActivity;
 

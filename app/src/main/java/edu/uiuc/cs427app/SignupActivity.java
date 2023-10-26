@@ -1,15 +1,13 @@
-package com.example.cs427groupproject;
+package edu.uiuc.cs427app;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.cs427groupproject.R;
+import androidx.appcompat.app.AppCompatActivity;
 
 
 public class SignupActivity extends AppCompatActivity {
