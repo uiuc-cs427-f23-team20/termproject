@@ -92,7 +92,7 @@ We also came up with a blueprint for task 4, which will be finished by end of th
 </br>
 Members present: kf17, luxiay2, uroy, meng29, rkuhlm2, tonyj2
 </br>
-Meeting notes: In this week's meeting we discussed the three tasks in milestone 3 and dedicated responsibilities. The database for this project will be created during the weekend. Next week, team members will check in daily on Campuswire group chat for progress/questions touch base. </br>
+Meeting notes: In this week's meeting we discussed the three tasks in milestone 3 and dedicated responsibilities to each coding pair. The database for this project will be created during the weekend. Next week, team members will check in daily on Campuswire group chat for progress/questions touch base. </br>
 Detailed meeting notes can be found in this Google doc using your UIUC credential : https://docs.google.com/document/d/1yzHaqCKl3npY1aOT5zAp4GVwfj9U7jDcFGs-nj_70xc/edit?usp=sharing
 </br>
 | NetID | Progress from last week | Tasks for next week |
@@ -109,13 +109,13 @@ Detailed meeting notes can be found in this Google doc using your UIUC credentia
 
 <b>Week 5</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: kf17, luxiay2, uroy, meng29, zerenlu2, rkuhlm2, tonyj2
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: Touchbase, working and brainstomring session. The team spend most of the time to discuss database storage and connections for our project. We will have addtional meeting/coworking sessions this week to finish milestone 3 together.
 </br>
 | NetID | Progress from last week | Tasks for next week |
 | ---------------| --------------------------------| ----------------------|
-| | | |
+| meng29 | Research on database connections and Android components. | Finish task 3 before due date. |
 | | | |
 | | | |
 | | | |
