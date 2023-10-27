@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // Task #3: Light/Dark Mode Toggle
         Switch toggle = findViewById(R.id.switch1);
+
+        // check if night mode is on/off and set bool/text
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_NO) {
             isNightModeOn = false;
             toggle.setText("Enable Dark Mode");
@@ -51,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
             isNightModeOn = false;
         }
+        // add listener so that on toggle, set mode/bool/text
         toggle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
