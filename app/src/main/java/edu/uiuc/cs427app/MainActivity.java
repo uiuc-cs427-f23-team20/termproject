@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
 
-    boolean isNightModeOn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,35 +38,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonLA.setOnClickListener(this);
         buttonNew.setOnClickListener(this);
 
-        // Task #3: Light/Dark Mode Toggle
-        Switch toggle = findViewById(R.id.switch1);
-
-        // check if night mode is on/off and set bool/text
-        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_NO) {
-            isNightModeOn = false;
-            toggle.setText("Enable Dark Mode");
-        } else if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
-            isNightModeOn = true;
-            toggle.setText("Enable Light Mode");
-        } else {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-            isNightModeOn = false;
-        }
-        // add listener so that on toggle, set mode/bool/text
-        toggle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (isNightModeOn) {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                    toggle.setText("Enable Dark Mode");
-                    isNightModeOn = false;
-                } else {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                    toggle.setText("Enable Light Mode");
-                    isNightModeOn = true;
-                }
-            }
-        });
     }
 
     @Override
