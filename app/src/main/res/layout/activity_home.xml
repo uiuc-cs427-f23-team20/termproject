@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:text="DashBoard"
                 android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textColor = "?android:textColorPrimary"
                 android:textSize="30dp"
                 android:textStyle="bold" />
 
@@ -52,7 +52,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Show City" />
-
 
 
     </LinearLayout>
