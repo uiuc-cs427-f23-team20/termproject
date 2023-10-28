@@ -37,6 +37,8 @@ public class LoginActivity extends AppCompatActivity {
                     Boolean result = myDB.checkusernamePassword(user,pass);
                     if(result == true){
                         Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                        // pass username variable to HomeActivity to query for uiconfig
+                        intent.putExtra("user",user);
                         startActivity(intent);
 
                     } else {
