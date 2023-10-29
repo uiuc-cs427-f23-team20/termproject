@@ -1,5 +1,6 @@
 package edu.uiuc.cs427app;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -55,11 +56,12 @@ public class DataHelper extends SQLiteOpenHelper {
     }
 
     // insert users data
-    public Boolean insertData(String username, String password){
+    public Boolean insertData(String username, String password, int uiconfig){
         SQLiteDatabase myDB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("netid", username);
         contentValues.put("password", password);
+        contentValues.put("uiconfig", uiconfig);
 
         long result = myDB.insert("users", null, contentValues);
         if (result == -1) {
@@ -85,5 +87,19 @@ public class DataHelper extends SQLiteOpenHelper {
         }else {
             return false;
         }
+    }
+
+    public Boolean checkUIConfig(String username){
+        SQLiteDatabase myDB = this.getWritableDatabase();
+        Cursor cursor = myDB.rawQuery("Select * from users where netid = ?", new String[]{username});
+        cursor.moveToFirst();
+        if (cursor.getCount() > 0) {
+            @SuppressLint("Range") int uiconfig = cursor.getInt(cursor.getColumnIndex("uiconfig"));
+            return uiconfig == 1 ? true : false;
+        }
+        return false;
+
+
+
     }
 }
