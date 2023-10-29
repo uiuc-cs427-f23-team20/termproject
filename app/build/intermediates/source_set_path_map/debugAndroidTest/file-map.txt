@@ -1,0 +1,7 @@
+edu.uiuc.cs427app.test.app-androidTest-0 /Users/luxiayin/Desktop/termproject-main/app/build/generated/res/resValues/androidTest/debug
+edu.uiuc.cs427app.test.app-androidTest-1 /Users/luxiayin/Desktop/termproject-main/app/build/generated/res/rs/androidTest/debug
+edu.uiuc.cs427app.test.app-mergeDebugAndroidTestResources-2 /Users/luxiayin/Desktop/termproject-main/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
+edu.uiuc.cs427app.test.app-mergeDebugAndroidTestResources-3 /Users/luxiayin/Desktop/termproject-main/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
+edu.uiuc.cs427app.test.app-merged_res-4 /Users/luxiayin/Desktop/termproject-main/app/build/intermediates/merged_res/debugAndroidTest
+edu.uiuc.cs427app.test.app-androidTest-5 /Users/luxiayin/Desktop/termproject-main/app/src/androidTest/res
+edu.uiuc.cs427app.test.app-androidTestDebug-6 /Users/luxiayin/Desktop/termproject-main/app/src/androidTestDebug/res

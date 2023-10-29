@@ -25,6 +25,8 @@ public class LoginActivity extends AppCompatActivity {
         btnResignup = (Button)findViewById(R.id.btnResignup);
         myDB = new edu.uiuc.cs427app.DataHelper(this);
 
+
+        // Initializing the Login components
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,18 +39,18 @@ public class LoginActivity extends AppCompatActivity {
                     Boolean result = myDB.checkusernamePassword(user,pass);
                     if(result == true){
                         Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                        //Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        intent.putExtra("username", user);
                         startActivity(intent);
-
                     } else {
                         Toast.makeText(LoginActivity.this, "Invalid password", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
-
-            {
-            }
         });
 
+
+        // redirect to Signup page
         btnResignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

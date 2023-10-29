@@ -5,16 +5,24 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+// Initializing the Logout components
 public class LogoutActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        logoutMenu(this);
+        Button logoutButton = findViewById(R.id.btnLogout);
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                logoutMenu(LogoutActivity.this);
+            }
+        });
     }
 
     public void logout(View view) {
@@ -24,6 +32,7 @@ public class LogoutActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
 
     private void logoutMenu(LogoutActivity logoutActivity) {
         AlertDialog.Builder builder = new AlertDialog.Builder(logoutActivity);

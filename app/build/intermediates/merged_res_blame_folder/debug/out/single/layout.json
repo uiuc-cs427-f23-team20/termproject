@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/Users/luxiayin/.gradle/daemon/7.3.3/edu.uiuc.cs427app-mergeDebugResources-23:/layout/activity_login.xml",
+        "source": "/Users/luxiayin/.gradle/daemon/7.3.3/edu.uiuc.cs427app-main-26:/layout/activity_login.xml"
+    },
+    {
+        "merged": "/Users/luxiayin/.gradle/daemon/7.3.3/edu.uiuc.cs427app-mergeDebugResources-23:/layout/activity_main.xml",
+        "source": "/Users/luxiayin/.gradle/daemon/7.3.3/edu.uiuc.cs427app-main-26:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/luxiayin/.gradle/daemon/7.3.3/edu.uiuc.cs427app-mergeDebugResources-23:/layout/activity_details.xml",
+        "source": "/Users/luxiayin/.gradle/daemon/7.3.3/edu.uiuc.cs427app-main-26:/layout/activity_details.xml"
+    },
+    {
+        "merged": "/Users/luxiayin/.gradle/daemon/7.3.3/edu.uiuc.cs427app-mergeDebugResources-23:/layout/activity_home.xml",
+        "source": "/Users/luxiayin/.gradle/daemon/7.3.3/edu.uiuc.cs427app-main-26:/layout/activity_home.xml"
+    },
+    {
+        "merged": "edu.uiuc.cs427app-mergeDebugResources-23:/layout/activity_home.xml",
+        "source": "edu.uiuc.cs427app-main-26:/layout/activity_home.xml"
+    },
+    {
+        "merged": "/Users/luxiayin/.gradle/daemon/7.3.3/edu.uiuc.cs427app-mergeDebugResources-23:/layout/activity_signup.xml",
+        "source": "/Users/luxiayin/.gradle/daemon/7.3.3/edu.uiuc.cs427app-main-26:/layout/activity_signup.xml"
+    }
+]
