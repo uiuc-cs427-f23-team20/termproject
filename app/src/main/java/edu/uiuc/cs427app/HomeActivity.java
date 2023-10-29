@@ -61,7 +61,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         LinearLayout.LayoutParams buttonParams = new LinearLayout.LayoutParams(buttonWidth, LinearLayout.LayoutParams.WRAP_CONTENT);
         buttonParams.weight = 1;
 
-        Map<String, String> userCities = myDB.getUserCitiesIdToCityName(intent.getExtras().getString("user"));
+        Map<String, String> userCities = myDB.getUserCitiesIdToCityName(intent.getExtras().getString("username"));
         for (String cityId : userCities.keySet()) {
             LinearLayout cityLayout = new LinearLayout(this);
             cityLayout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
@@ -80,7 +80,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                     Intent intent;
                     intent = new Intent(view.getContext(), DetailsActivity.class);
                     intent.putExtra("city", userCities.get(cityId));
-                    intent.putExtra("user", extras.getString("user"));
+                    intent.putExtra("username", extras.getString("username"));
                     intent.putExtra("cityId", cityId);
                     startActivity(intent);
                 }
@@ -99,7 +99,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(View view) {
                 Intent intent;
                 intent = new Intent(view.getContext(), AddCitiesActivity.class);
-                intent.putExtra("user",extras.getString("user"));
+                intent.putExtra("username",extras.getString("username"));
                 startActivity(intent);
             }
         });

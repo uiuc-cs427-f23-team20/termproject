@@ -48,10 +48,10 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         buttonDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                myDB.deleteUserCity(extras.getString("user"), extras.getString("cityId"));
+                myDB.deleteUserCity(extras.getString("username"), extras.getString("cityId"));
                 Intent intent;
                 intent = new Intent(view.getContext(), HomeActivity.class);
-                intent.putExtra("user",extras.getString("user"));
+                intent.putExtra("username",extras.getString("username"));
                 startActivity(intent);
             }
         });
