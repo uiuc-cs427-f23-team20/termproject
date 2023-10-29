@@ -25,6 +25,7 @@ public class LoginActivity extends AppCompatActivity {
         btnResignup = (Button)findViewById(R.id.btnResignup);
         myDB = new edu.uiuc.cs427app.DataHelper(this);
 
+        // Initializing the Login components
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
                     if(result == true){
                         Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                         // pass username variable to HomeActivity to query for uiconfig
-                        intent.putExtra("user",user);
+                        intent.putExtra("username",user);
                         startActivity(intent);
 
                     } else {
@@ -51,6 +52,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        // redirect to Signup page
         btnResignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

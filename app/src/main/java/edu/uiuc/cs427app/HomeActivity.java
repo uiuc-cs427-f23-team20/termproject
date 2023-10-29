@@ -21,12 +21,15 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_home);
         myDB = new edu.uiuc.cs427app.DataHelper(this);
 
+
         // Task #3: Displaying User's UI Settings
         // Check for intent extras passed from login
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
         if (extras != null) {
-            String user = intent.getExtras().getString("user");
+            String user = intent.getExtras().getString("username");
+            // Task #1: set new title
+            setTitle("Team #20_" + user);
             // Query database for uiConfig setting
             Boolean uiConfig = myDB.checkUIConfig(user);
             if (uiConfig) {
