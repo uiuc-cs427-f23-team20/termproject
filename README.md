@@ -117,7 +117,7 @@ Meeting notes: Touch base, research and brainstorming session. Each coding pair 
 | ---------------| --------------------------------| ----------------------|
 | meng29 | Did research on Android components, SQLLite and content provider. | Finish milestone 3 before due date. |
 | kf17| Implement Task #3 | Complete task #3. Assist team with code-pairing, Git issues, etc to finish milestone 3. |
-| tonyj2 | Create logic for initalizing sqlite database, data query, insert, and delete functions, logic for displaying all cities in add city page, logic for adding a specific city for logged in user, logic for deleting a city for user | Complete milestone 3 and plan for milestone 4|
+| tonyj2 | Create logic for initalizing sqlite database, parts of data query, insert, and delete functions, logic for displaying all cities in add city page, logic for adding a specific city for logged in user, logic for deleting a city for user | Complete milestone 3 and plan for milestone 4|
 | | | |
 | | | |
 | | | |
