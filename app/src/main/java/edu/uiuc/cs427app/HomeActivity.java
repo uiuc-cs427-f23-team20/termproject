@@ -11,10 +11,8 @@ import androidx.navigation.ui.AppBarConfiguration;
 import edu.uiuc.cs427app.databinding.ActivityHomeBinding;
 
 
-    edu.uiuc.cs427app.DataHelper myDB;
-
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
-
+    edu.uiuc.cs427app.DataHelper myDB;
     private AppBarConfiguration appBarConfiguration;
     private ActivityHomeBinding binding;
     @Override
