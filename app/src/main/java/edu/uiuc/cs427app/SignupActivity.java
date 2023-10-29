@@ -64,6 +64,7 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
 
+        // Initializing the Signup components
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -109,6 +110,7 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
 
+        // redirect to Login page
         btnSignIn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {

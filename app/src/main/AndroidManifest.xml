@@ -13,9 +13,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyFirstApp">
-        <activity
-            android:name=".HomeActivity"
-            android:exported="false" />
+        <activity android:name=".HomeActivity" android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+            <meta-data android:name="android.app.label" android:resource="@string/username_label"/>
+        </activity>
         <activity
             android:name=".LoginActivity"
             android:exported="false" />

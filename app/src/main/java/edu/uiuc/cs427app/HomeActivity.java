@@ -17,26 +17,32 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private ActivityHomeBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // on HomeActivity init, display correct ui setting for user
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         myDB = new edu.uiuc.cs427app.DataHelper(this);
+
 
         // Task #3: Displaying User's UI Settings
         // Check for intent extras passed from login
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
         if (extras != null) {
-            String user = intent.getExtras().getString("user");
+            String user = intent.getExtras().getString("username");
+            // Task #1: set new title
+            setTitle("Team #20_" + user);
             // Query database for uiConfig setting
             Boolean uiConfig = myDB.checkUIConfig(user);
+            System.out.println(uiConfig);
             if (uiConfig) {
                 // if uiConfig is set to true, enable dark mode
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
             } else {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
             }
         } else {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            // defaults to light mode
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
 
         // Initializing the UI components
