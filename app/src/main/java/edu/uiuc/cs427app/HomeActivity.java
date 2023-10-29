@@ -7,7 +7,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
 import androidx.navigation.ui.AppBarConfiguration;
+
+import java.util.List;
+import java.util.Map;
+
 import edu.uiuc.cs427app.databinding.ActivityHomeBinding;
 
 
@@ -45,18 +52,58 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
 
-        // Initializing the UI components
-        // The list of locations should be customized per user (change the implementation so that
-        // buttons are added to layout programmatically
-        Button buttonChampaign = findViewById(R.id.buttonChampaign);
-        Button buttonChicago = findViewById(R.id.buttonChicago);
-        Button buttonLA = findViewById(R.id.buttonLA);
-        Button buttonNew = findViewById(R.id.buttonAddLocation);
 
-        buttonChampaign.setOnClickListener(this);
-        buttonChicago.setOnClickListener(this);
-        buttonLA.setOnClickListener(this);
-        buttonNew.setOnClickListener(this);
+        // Task #2
+        LinearLayout outerLayout = (LinearLayout) findViewById(R.id.details);
+        int linearLayoutHeight = (int) getResources().getDimension(R.dimen.LinearLayout_height);
+        LinearLayout.LayoutParams textViewParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, linearLayoutHeight);
+        int buttonWidth = (int) getResources().getDimension(R.dimen.button_width);
+        LinearLayout.LayoutParams buttonParams = new LinearLayout.LayoutParams(buttonWidth, LinearLayout.LayoutParams.WRAP_CONTENT);
+        buttonParams.weight = 1;
+
+        Map<String, String> userCities = myDB.getUserCitiesIdToCityName(intent.getExtras().getString("user"));
+        for (String cityId : userCities.keySet()) {
+            LinearLayout cityLayout = new LinearLayout(this);
+            cityLayout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+            cityLayout.setOrientation(LinearLayout.HORIZONTAL);
+
+            TextView cityNameView = new TextView(this);
+            cityNameView.setLayoutParams(textViewParams);
+            cityNameView.setText(userCities.get(cityId));
+
+            Button addCityButton = new Button(this);
+            addCityButton.setLayoutParams(buttonParams);
+            addCityButton.setText("View Detail");
+            addCityButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent;
+                    intent = new Intent(view.getContext(), DetailsActivity.class);
+                    intent.putExtra("city", userCities.get(cityId));
+                    intent.putExtra("user", extras.getString("user"));
+                    intent.putExtra("cityId", cityId);
+                    startActivity(intent);
+                }
+            });
+
+            cityLayout.addView(cityNameView);
+            cityLayout.addView(addCityButton);
+            outerLayout.addView(cityLayout);
+        }
+
+        Button buttonAddCity = new Button(this);
+        buttonAddCity.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        buttonAddCity.setText("Add a location");
+        buttonAddCity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent;
+                intent = new Intent(view.getContext(), AddCitiesActivity.class);
+                intent.putExtra("user",extras.getString("user"));
+                startActivity(intent);
+            }
+        });
+        outerLayout.addView(buttonAddCity);
 
         Button buttonLogout = findViewById(R.id.btnLogout);
         buttonLogout.setOnClickListener(this);
@@ -66,36 +113,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         Intent intent;
         switch (view.getId()) {
-            case R.id.buttonChampaign:
-                intent = new Intent(this, DetailsActivity.class);
-                intent.putExtra("city", "Champaign");
-                startActivity(intent);
-                break;
-            case R.id.buttonChicago:
-                intent = new Intent(this, DetailsActivity.class);
-                intent.putExtra("city", "Chicago");
-                startActivity(intent);
-                break;
-            case R.id.buttonLA:
-                intent = new Intent(this, DetailsActivity.class);
-                intent.putExtra("city", "Los Angeles");
-                startActivity(intent);
-                break;
             case R.id.btnLogout:
                 intent = new Intent(this, LoginActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
                 break;
-            case R.id.buttonAddLocation:
-                // Implement this action to add a new location to the list of locations
-                break;
         }
     }
-
-//    public void logout(View view) {
-//        Intent intent = new Intent(this, LoginActivity.class);
-//        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//        startActivity(intent);
-//        finish();
-//    }
 }
