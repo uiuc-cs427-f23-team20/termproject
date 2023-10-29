@@ -29,6 +29,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".DetailsActivity" android:exported="true"></activity>
+        <activity android:name=".AddCitiesActivity" android:exported="true"></activity>
     </application>
 
 </manifest>

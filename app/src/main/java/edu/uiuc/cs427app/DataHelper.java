@@ -8,7 +8,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class DataHelper extends SQLiteOpenHelper {
     // public static final String databaseName = "login.db";
@@ -98,8 +100,75 @@ public class DataHelper extends SQLiteOpenHelper {
             return uiconfig == 1 ? true : false;
         }
         return false;
+    }
 
+    public Map<String, String> getAllCities() {
+        Map<String, String> citiesIdToName = new HashMap<>();
+        SQLiteDatabase myDB = this.getWritableDatabase();
+        Cursor cursor = myDB.rawQuery("Select * from cities", null);
+        while (cursor.moveToNext()) {
+            String cityId = cursor.getString(0);
+            String cityName = cursor.getString(1);
+            citiesIdToName.put(cityId, cityName);
+        }
+        return citiesIdToName;
+    }
 
+    public Boolean insertUsersCities(String userId, String cityId) {
+        SQLiteDatabase myDB = this.getWritableDatabase();
 
+        List<String> userCitiesId = getUserCitiesId(userId);
+        if (userCitiesId.contains(cityId)) {
+            return true;
+        }
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("user_id", userId);
+        contentValues.put("citi_id", cityId);
+
+        long result = myDB.insert("user_cities", null, contentValues);
+        if (result == -1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public boolean deleteUserCity(String username, String citiId) {
+        System.out.println("citiId : " + citiId);
+        SQLiteDatabase myDB = this.getWritableDatabase();
+        // Delete the record from the user_cities table
+        int deletedRows = myDB.delete("user_cities", "citi_id = ?",
+                new String[] {citiId});
+        // Check if any record were deleted
+        return deletedRows > 0;
+    }
+
+    public Map<String, String> getUserCitiesIdToCityName(String userId) {
+        SQLiteDatabase myDB = this.getWritableDatabase();
+        Cursor cursor = myDB.rawQuery("select * from user_cities uc join cities c " +
+                "on uc.citi_id = c.citi_id where user_id = ?", new String[]{userId});
+
+        Map<String, String> cityIdToCityMap = new HashMap<>();
+        int cityIdColIdx = cursor.getColumnIndex("citi_id");
+        int cityNameColIdx = cursor.getColumnIndex("citi_name");
+        while (cursor.moveToNext()) {
+            String cityId = cursor.getString(cityIdColIdx);
+            String cityName = cursor.getString(cityNameColIdx);
+            cityIdToCityMap.put(cityId, cityName);
+        }
+        return cityIdToCityMap;
+    }
+
+    public List<String> getUserCitiesId(String userId) {
+        SQLiteDatabase myDB = this.getWritableDatabase();
+        Cursor cursor = myDB.rawQuery("select * from user_cities where user_id = ?", new String[]{userId});
+
+        List<String> userCities = new ArrayList<>();
+        while (cursor.moveToNext()) {
+            String citiesId = cursor.getString(1);
+            userCities.add(citiesId);
+        }
+        return userCities;
     }
 }
