@@ -22,15 +22,6 @@
             android:layout_height="50dp"
             android:text="CS427 Project App" />
 
-<!--        <TextView-->
-<!--            android:id="@+id/usernameTextView"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Team #20_Username"-->
-<!--            android:textSize="20sp"-->
-<!--            android:layout_centerInParent="true"-->
-<!--            />-->
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
