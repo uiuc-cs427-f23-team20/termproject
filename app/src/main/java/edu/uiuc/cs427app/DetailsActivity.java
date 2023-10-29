@@ -20,6 +20,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
+        myDB = new edu.uiuc.cs427app.DataHelper(this);
 
         // Process the Intent payload that has opened this Activity and show the information accordingly
         String cityName = getIntent().getStringExtra("city").toString();
@@ -40,7 +41,10 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         Button buttonMap = findViewById(R.id.mapButton);
         buttonMap.setOnClickListener(this);
 
-        Button buttonDelete = findViewById(R.id.deleteButton);
+        Button buttonDelete = new Button(this);
+        buttonDelete.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        buttonDelete.setText("Delete City");
+
         buttonDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,6 +55,9 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
                 startActivity(intent);
             }
         });
+
+        LinearLayout outerlayout = findViewById(R.id.details);
+        outerlayout.addView(buttonDelete);
 
     }
 

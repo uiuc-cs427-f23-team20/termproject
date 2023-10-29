@@ -134,14 +134,17 @@ public class DataHelper extends SQLiteOpenHelper {
         }
     }
 
-    public boolean deleteUserCity(String username, String citiId) {
-        System.out.println("citiId : " + citiId);
+    public boolean deleteUserCity(String userId, String citiId) {
         SQLiteDatabase myDB = this.getWritableDatabase();
+
+        String tempCitiId = "2";
+
         // Delete the record from the user_cities table
-        int deletedRows = myDB.delete("user_cities", "citi_id = ?",
-                new String[] {citiId});
+        int deletedRows = myDB.delete("user_cities", "user_id = ? and citi_id = ?",
+                new String[] {userId, citiId});
+
         // Check if any record were deleted
-        return deletedRows > 0;
+        return deletedRows>0;
     }
 
     public Map<String, String> getUserCitiesIdToCityName(String userId) {

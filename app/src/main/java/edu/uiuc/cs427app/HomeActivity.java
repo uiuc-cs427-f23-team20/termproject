@@ -85,10 +85,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             outerLayout.addView(cityLayout);
         }
 
-        Button buttonLogout = new Button(this);
-        buttonLogout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-        buttonLogout.setText("Add a location");
-        buttonLogout.setOnClickListener(new View.OnClickListener() {
+        Button buttonAddCity = new Button(this);
+        buttonAddCity.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        buttonAddCity.setText("Add a location");
+        buttonAddCity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent;
@@ -97,7 +97,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
             }
         });
-        outerLayout.addView(buttonLogout);
+        outerLayout.addView(buttonAddCity);
+
+        Button buttonLogout = findViewById(R.id.btnLogout);
+        buttonLogout.setOnClickListener(this);
     }
 
     @Override
