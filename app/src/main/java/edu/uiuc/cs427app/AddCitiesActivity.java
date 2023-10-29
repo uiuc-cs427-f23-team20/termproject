@@ -45,10 +45,10 @@ public class AddCitiesActivity extends AppCompatActivity implements View.OnClick
             addCityButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    myDB.insertUsersCities(extras.getString("user"), cityId);
+                    myDB.insertUsersCities(extras.getString("username"), cityId);
                     Intent intent;
                     intent = new Intent(view.getContext(), HomeActivity.class);
-                    intent.putExtra("user",extras.getString("user"));
+                    intent.putExtra("username",extras.getString("username"));
                     startActivity(intent);
                 }
             });
