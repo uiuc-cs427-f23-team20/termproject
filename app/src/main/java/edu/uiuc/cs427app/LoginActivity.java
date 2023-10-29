@@ -40,6 +40,8 @@ public class LoginActivity extends AppCompatActivity {
                     if(result == true){
                         Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                         //Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        
+                        // pass username variable to HomeActivity to query for uiconfig
                         intent.putExtra("username", user);
                         startActivity(intent);
                     } else {
