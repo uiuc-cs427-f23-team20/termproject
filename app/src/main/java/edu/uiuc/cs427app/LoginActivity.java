@@ -47,9 +47,6 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 }
             }
-
-            {
-            }
         });
 
         // redirect to Signup page

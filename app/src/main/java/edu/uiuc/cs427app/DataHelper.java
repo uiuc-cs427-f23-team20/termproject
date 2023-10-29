@@ -17,10 +17,9 @@ public class DataHelper extends SQLiteOpenHelper {
     }
 
 
-    // create users data table
     @Override
     public void onCreate(SQLiteDatabase myDB){
-
+        // create users, cities, and users_cities table, adds cities records
         String createUsersTable = "create table users (netid varchar(20) not null, " +
                 "password varchar(20) not null, uiconfig int not null default 0, " +
                 "email varchar(50), name varchar(50), primary key(netid));";
@@ -52,11 +51,12 @@ public class DataHelper extends SQLiteOpenHelper {
     }
     @Override
     public void onUpgrade(SQLiteDatabase myDB, int oldVersion, int newVersion) {
+        // drops users table
         myDB.execSQL("drop Table if exists users");
     }
 
-    // insert users data
     public Boolean insertData(String username, String password, int uiconfig){
+        // returns True if new user was successfully created
         SQLiteDatabase myDB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("netid", username);
@@ -71,6 +71,7 @@ public class DataHelper extends SQLiteOpenHelper {
         }
     }
     public Boolean checkUsername(String username){
+        // returns True if netid already exists in database
         SQLiteDatabase myDB = this.getWritableDatabase();
         Cursor cursor = myDB.rawQuery("Select * from users where netid = ?", new String[]{username});
         if(cursor.getCount() > 0) {
@@ -80,6 +81,7 @@ public class DataHelper extends SQLiteOpenHelper {
         }
     }
     public Boolean checkusernamePassword(String username, String password){
+        // returns True if netid and password are validated
         SQLiteDatabase myDB = this.getWritableDatabase();
         Cursor cursor = myDB.rawQuery("Select * from users where netid = ? and password = ?", new String[]{username, password});
         if (cursor.getCount() > 0) {
@@ -90,6 +92,7 @@ public class DataHelper extends SQLiteOpenHelper {
     }
 
     public Boolean checkUIConfig(String username){
+        // returns True if dark mode enabled for user
         SQLiteDatabase myDB = this.getWritableDatabase();
         Cursor cursor = myDB.rawQuery("Select * from users where netid = ?", new String[]{username});
         cursor.moveToFirst();

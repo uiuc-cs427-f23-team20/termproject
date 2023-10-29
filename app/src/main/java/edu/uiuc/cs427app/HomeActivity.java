@@ -17,6 +17,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private ActivityHomeBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // on HomeActivity init, display correct ui setting for user
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         myDB = new edu.uiuc.cs427app.DataHelper(this);
