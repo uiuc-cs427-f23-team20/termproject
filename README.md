@@ -61,7 +61,7 @@ To save more time for task 4, next team meeting will be on Tuesday instead of Th
 |luxiay2 |Completed milestone 2 task 1 and 2.1 |Finish use case 4. Research on task 3 and 4. |
 | zerenlu2 |Completed milestone 2 task 1 and 2.1 |Finish use case 3. Research on task 4. |
 |rkuhlm2 |Completed milestone 2 task 1 and 2.1 |Finish use case 5. Research on Transition Graph. |
-| kharissa | Completed milestone 2 task 1 and 2.1 | Finish use case 3. Research on task 4. |
+| kf17 | Completed milestone 2 task 1 and 2.1 | Finish use case 3. Research on task 4. |
 |tonyj2 | Completed milestone 2 task 1 and 2.1 |Create the class diagram. Research on task 4. Review other tasks |
 |uroy  | Participated and discussed on use-cases. |Research on Transition Graph.  Review other tasks. |
 | | | |
@@ -82,7 +82,7 @@ We also came up with a blueprint for task 4, which will be finished by end of th
 | luxiay2 |Completed use case 4. Reviewed and discussed other use cases and class diagram during the meeting. | Start working on milestone 3. |
 | zerenlu2 |Completed use case 3. Reviewed other use cases and class diagram during the meeting. Draw the component transition graph. | Start working on milestone 3. |
 |rkuhlm2 |Completed use case 5. Work on transition graph.|Start working on milestone 3. |
-| kharissa | Completed use case 3 and updated relationships for class diagram graph.| Start working on milestone 3.|
+| kf17 | Completed use case 3 and updated relationships for class diagram graph.| Start working on milestone 3.|
 | tonyj2 |Created an initial version of the class diagram. Reviewed and edited the use cases |Start working on milestone 3 |
 | uroy | Participated and discussed on use-cases. Reviewd different tasks. | Start working on milestone 3|
 | | | |
@@ -98,7 +98,7 @@ Detailed meeting notes can be found in this Google doc using your UIUC credentia
 | NetID | Progress from last week | Tasks for next week |
 | ---------------| --------------------------------| ----------------------|
 | meng29 | Went over milestone 3 requirments with team as the starting point. | Work on milestone 3 task 2 with Tony. |
-| | | |
+| kf17 | Research tech requirements for milestone 3. | Implement task #3 for milestone 3. |
 | | | |
 | | | |
 | | | |
@@ -116,7 +116,7 @@ Meeting notes: Touch base, research and brainstorming session. Each coding pair 
 | NetID | Progress from last week | Tasks for next week |
 | ---------------| --------------------------------| ----------------------|
 | meng29 | Did research on Android components, SQLLite and content provider. | Finish milestone 3 before due date. |
-| | | |
+| kf17| Implement Task #3 | Complete task #3. Assist team with code-pairing, Git issues, etc to finish milestone 3. |
 | | | |
 | | | |
 | | | |
