@@ -8,10 +8,16 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Intent;
-
-
 import androidx.appcompat.app.AppCompatActivity;
 
+
+/**
+ * DetailsActivity displays detailed information about a specific city chosen by the user.
+ * It shows the welcome message, weather information, and provides options to view the city on a map
+ * (will be implemented in milestone 4)
+ * and delete the city from the user's saved cities. It communicates with the database to perform
+ * user-specific operations such as deleting a city.
+ */
 public class DetailsActivity extends AppCompatActivity implements View.OnClickListener{
 
     edu.uiuc.cs427app.DataHelper myDB;
@@ -33,22 +39,25 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         // Initializing the GUI elements
         TextView welcomeMessage = findViewById(R.id.welcomeText);
         TextView cityInfoMessage = findViewById(R.id.cityInfo);
-
         welcomeMessage.setText(welcome);
         cityInfoMessage.setText(cityWeatherInfo);
-        // Get the weather information from a Service that connects to a weather server and show the results
 
+        // Button for showing city on map
         Button buttonMap = findViewById(R.id.mapButton);
         buttonMap.setOnClickListener(this);
 
+        // Button for deleting the city from user's saved cities
         Button buttonDelete = new Button(this);
         buttonDelete.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
         buttonDelete.setText("Delete City");
 
+        // Set click listener for the delete button
         buttonDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Call the database helper method to delete the city for the logged-in user
                 myDB.deleteUserCity(extras.getString("username"), extras.getString("cityId"));
+                // Navigate back to HomeActivity after deleting the city
                 Intent intent;
                 intent = new Intent(view.getContext(), HomeActivity.class);
                 intent.putExtra("username",extras.getString("username"));
@@ -56,6 +65,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
             }
         });
 
+        // Get the outer layout container and add the delete button to the layout
         LinearLayout outerlayout = findViewById(R.id.details);
         outerlayout.addView(buttonDelete);
 
@@ -64,6 +74,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View view) {
         //Implement this (create an Intent that goes to a new Activity, which shows the map)
+        // TODO: DO NOT DELETE THIS OR APP WILL CRASH!
 
     }
 }

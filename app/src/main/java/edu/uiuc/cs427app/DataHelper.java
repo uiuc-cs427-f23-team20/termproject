@@ -12,6 +12,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * DataHelper class manages the SQLite database operations for user and city data.
+ */
 public class DataHelper extends SQLiteOpenHelper {
     // public static final String databaseName = "login.db";
     public DataHelper(Context context) {
@@ -21,7 +24,8 @@ public class DataHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase myDB){
-        // create users, cities, and users_cities table, adds cities records
+        /** Called when the database is created for the first time.*/
+        // create users, cities, and users_cities table
         String createUsersTable = "create table users (netid varchar(20) not null, " +
                 "password varchar(20) not null, uiconfig int not null default 0, " +
                 "email varchar(50), name varchar(50), primary key(netid));";
@@ -38,7 +42,7 @@ public class DataHelper extends SQLiteOpenHelper {
                 "CONSTRAINT FK_CITY FOREIGN KEY(citi_id) REFERENCES cities(citi_id), " +
                 "primary key(user_id,citi_id) ) ;";
 
-
+        // adds cities records - subject to change in milestone 4
         List<String> insertBaseCities = new ArrayList<>();
         insertBaseCities.add("INSERT INTO cities (citi_id, citi_name) VALUES(1, 'Champaign');");
         insertBaseCities.add("INSERT INTO cities (citi_id, citi_name) VALUES(2, 'Chicago');");
@@ -61,7 +65,8 @@ public class DataHelper extends SQLiteOpenHelper {
         myDB.execSQL("drop Table if exists users");
     }
 
-    public Boolean insertData(String username, String password, int uiconfig){
+    public Boolean insertUserData(String username, String password, int uiconfig){
+        // this method insert new user's username/password/UI Customization data into user table
         // returns True if new user was successfully created
         SQLiteDatabase myDB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -77,7 +82,7 @@ public class DataHelper extends SQLiteOpenHelper {
         }
     }
     public Boolean checkUsername(String username){
-        // returns True if netid already exists in database
+        // returns True if username(netid) already exists in database
         SQLiteDatabase myDB = this.getWritableDatabase();
         Cursor cursor = myDB.rawQuery("Select * from users where netid = ?", new String[]{username});
         if(cursor.getCount() > 0) {
@@ -86,8 +91,8 @@ public class DataHelper extends SQLiteOpenHelper {
             return false;
         }
     }
-    public Boolean checkusernamePassword(String username, String password){
-        // returns True if netid and password are validated
+    public Boolean checkUsernamePassword(String username, String password){
+        // returns True if username(netid) and password are validated
         SQLiteDatabase myDB = this.getWritableDatabase();
         Cursor cursor = myDB.rawQuery("Select * from users where netid = ? and password = ?", new String[]{username, password});
         if (cursor.getCount() > 0) {
@@ -110,6 +115,7 @@ public class DataHelper extends SQLiteOpenHelper {
     }
 
     public Map<String, String> getAllCities() {
+        // returns a hashmap of all cityIds to cityNames in the cities table
         Map<String, String> citiesIdToName = new HashMap<>();
         SQLiteDatabase myDB = this.getWritableDatabase();
         Cursor cursor = myDB.rawQuery("Select * from cities", null);
@@ -122,8 +128,9 @@ public class DataHelper extends SQLiteOpenHelper {
     }
 
     public Boolean insertUsersCities(String userId, String cityId) {
+        // this method insert userId and cityId into user_cities table
+        // returns true if the insertion is successful
         SQLiteDatabase myDB = this.getWritableDatabase();
-
         List<String> userCitiesId = getUserCitiesId(userId);
         if (userCitiesId.contains(cityId)) {
             return true;
@@ -142,19 +149,17 @@ public class DataHelper extends SQLiteOpenHelper {
     }
 
     public boolean deleteUserCity(String userId, String citiId) {
-        SQLiteDatabase myDB = this.getWritableDatabase();
-
-        String tempCitiId = "2";
-
         // Delete the record from the user_cities table
+        // returns true if the insertion is successful
+        SQLiteDatabase myDB = this.getWritableDatabase();
+        String tempCitiId = "2";
         int deletedRows = myDB.delete("user_cities", "user_id = ? and citi_id = ?",
                 new String[] {userId, citiId});
-
-        // Check if any record were deleted
         return deletedRows>0;
     }
 
     public Map<String, String> getUserCitiesIdToCityName(String userId) {
+        // Retrieves a map of city IDs to city names for cities associated with the given user ID
         SQLiteDatabase myDB = this.getWritableDatabase();
         Cursor cursor = myDB.rawQuery("select * from user_cities uc join cities c " +
                 "on uc.citi_id = c.citi_id where user_id = ?", new String[]{userId});
@@ -171,6 +176,7 @@ public class DataHelper extends SQLiteOpenHelper {
     }
 
     public List<String> getUserCitiesId(String userId) {
+        // Retrieves a list of cityIDs associated with the given username
         SQLiteDatabase myDB = this.getWritableDatabase();
         Cursor cursor = myDB.rawQuery("select * from user_cities where user_id = ?", new String[]{userId});
 

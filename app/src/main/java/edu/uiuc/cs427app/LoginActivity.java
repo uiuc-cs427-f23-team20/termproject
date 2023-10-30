@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (user.equals("") || pass.equals("")){
                     Toast.makeText(LoginActivity.this, "All fields are required", Toast.LENGTH_SHORT).show();
                 } else {
-                    Boolean result = myDB.checkusernamePassword(user,pass);
+                    Boolean result = myDB.checkUsernamePassword(user,pass);
                     if(result == true){
                         Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                         // pass username variable to HomeActivity to query for uiconfig
