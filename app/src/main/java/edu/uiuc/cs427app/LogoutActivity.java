@@ -16,7 +16,10 @@ public class LogoutActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         Button logoutButton = findViewById(R.id.btnLogout);
+
+        // Initialize logout button and set click listener
         logoutButton.setOnClickListener(new View.OnClickListener() {
+            // Show logout confirmation dialog
             @Override
             public void onClick(View v) {
                 logoutMenu(LogoutActivity.this);
@@ -24,6 +27,7 @@ public class LogoutActivity extends AppCompatActivity {
         });
     }
 
+    // Logout function, redirects to LoginActivity
     public void logout(View view) {
 
         Intent intent = new Intent(this, LoginActivity.class);
@@ -32,17 +36,19 @@ public class LogoutActivity extends AppCompatActivity {
         finish();
     }
 
-
+    // Show logout confirmation dialog
     private void logoutMenu(LogoutActivity logoutActivity) {
         AlertDialog.Builder builder = new AlertDialog.Builder(logoutActivity);
         builder.setTitle("Logout");
         builder.setMessage("Are you sure you want to logout?");
+        // Positive button with logout action
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 logout(null);
             }
         });
+        // Negative button to dismiss dialog
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
