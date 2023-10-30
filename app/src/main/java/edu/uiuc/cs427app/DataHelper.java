@@ -43,6 +43,10 @@ public class DataHelper extends SQLiteOpenHelper {
         insertBaseCities.add("INSERT INTO cities (citi_id, citi_name) VALUES(1, 'Champaign');");
         insertBaseCities.add("INSERT INTO cities (citi_id, citi_name) VALUES(2, 'Chicago');");
         insertBaseCities.add("INSERT INTO cities (citi_id, citi_name) VALUES(3, 'Los Angeles');");
+        insertBaseCities.add("INSERT INTO cities (citi_id, citi_name) VALUES(4, 'San Francisco');");
+        insertBaseCities.add("INSERT INTO cities (citi_id, citi_name) VALUES(5, 'Seattle');");
+        insertBaseCities.add("INSERT INTO cities (citi_id, citi_name) VALUES(6, 'New York City');");
+        insertBaseCities.add("INSERT INTO cities (citi_id, citi_name) VALUES(7, 'Miami');");
 
         myDB.execSQL(createUsersTable);
         myDB.execSQL(createCitiesTable);
