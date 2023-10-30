@@ -128,6 +128,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
+        // Handle log out button click, navigate to LoginActivity
         Intent intent;
         switch (view.getId()) {
             case R.id.btnLogout:
