@@ -100,7 +100,7 @@ Detailed meeting notes can be found in this Google doc using your UIUC credentia
 | meng29 | Went over milestone 3 requirments with team as the starting point. | Work on milestone 3 task 2 with Tony. |
 | kf17 | Research tech requirements for milestone 3. | Implement task #3 for milestone 3. |
 | tonyj2| Investiaged and planned for milesone 3 with the team | Start working on milestone 3 task 2 with sicheng |
-| | | |
+|luxiay2 | Research on technique for the authentication page.  | Start working on milestone 3 task 1 with Zeren.  |
 | | | |
 | | | |
 | | | |
@@ -118,7 +118,7 @@ Meeting notes: Touch base, research and brainstorming session. Each coding pair 
 | meng29 | Did research on Android components, SQLLite and content provider. | Finish milestone 3 before due date. |
 | kf17| Implement Task #3 | Complete task #3. Assist team with code-pairing, Git issues, etc to finish milestone 3. |
 | tonyj2 | Create logic for initalizing sqlite database, parts of data query, insert, and delete functions, logic for displaying all cities in add city page, logic for adding a specific city for logged in user, logic for deleting a city for user | Complete milestone 3 and plan for milestone 4|
-| | | |
+|luxiay2 |  Develop the Signup and Login pages, and the function of displaying username.  | Complete milestone 3 task1. |
 | | | |
 | | | |
 | | | |
