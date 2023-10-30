@@ -86,6 +86,7 @@ public class SignupActivity extends AppCompatActivity {
                         {
                             Boolean regResult = myDB.insertUserData(user,pass,uiconfig);
                             if (regResult == true){
+                                // If register is successful, navigate to the LoginActivity
                                 Toast.makeText(SignupActivity.this, "Registered Successfully!", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
                                 startActivity(intent);
@@ -93,24 +94,27 @@ public class SignupActivity extends AppCompatActivity {
                             }
                             else
                             {
+                                // Show an error message for an invalid registered
                                 Toast.makeText(SignupActivity.this, "Registered Failed!", Toast.LENGTH_SHORT).show();
                             }
                         }
                         else
                         {
+                            // Show an error message if user already registered
                             Toast.makeText(SignupActivity.this, "User already Exists.\n Please Sign In", Toast.LENGTH_SHORT).show();
                         }
 
                     }
                     else
                     {
+                        // // Show an error message for an invalid password
                         Toast.makeText(SignupActivity.this,"Password not Matching.",Toast.LENGTH_SHORT).show();
                     }
                 }
             }
         });
 
-        // redirect to Login page
+        // Set up a click listener for the "Resignup" button to navigate to the SignupActivity
         btnSignIn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
