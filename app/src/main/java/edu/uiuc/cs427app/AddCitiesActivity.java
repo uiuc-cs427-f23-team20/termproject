@@ -12,7 +12,7 @@ import java.util.Map;
 
 /**
  * AddCitiesActivity: This activity allows users to view a list of available cities and add them to their profile.
- * (subject to change to 3rd party API in milestone4)
+ * (subject to change to 3rd party API in milestone4.)
  * This activity displays a list of cities retrieved from the database. Users can add a selected city to their
  * profile by clicking the "Add City" button next to the city name. After adding a city, the user is redirected
  * back to the HomeActivity.
