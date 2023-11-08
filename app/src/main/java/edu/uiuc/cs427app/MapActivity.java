@@ -7,18 +7,24 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import java.util.List;
+
 public class MapActivity extends AppCompatActivity {
+
+    edu.uiuc.cs427app.DataHelper myDB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
+        myDB = new edu.uiuc.cs427app.DataHelper(this);
 
         // Retrieve city_id from Intent
         String cityId = getIntent().getStringExtra("cityId").toString();
 
         // Call method from DataHelper to load coordinates (hard-code for test)
-        String latitude = "41.881832";
-        String longitude = "-87.623177";
+        List<String> coordinates = myDB.getCoords(cityId);
+        String latitude = coordinates.get(0);
+        String longitude = coordinates.get(1);
 
         // Update Webview settings
         WebView webView = (WebView) findViewById(R.id.webViewMap);
