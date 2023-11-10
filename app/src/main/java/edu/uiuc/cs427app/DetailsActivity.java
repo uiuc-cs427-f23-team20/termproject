@@ -9,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 
 /**
@@ -35,6 +36,26 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
+
+
+        if (extras != null) {
+            String user = intent.getExtras().getString("username");
+            // Task #1: set new title
+            setTitle("Team #20_" + user);
+            // Query database for uiConfig setting
+            Boolean uiConfig = extras.getBoolean("uiConfig"); //myDB.checkUIConfig(user);
+
+            System.out.println(uiConfig);
+            if (uiConfig) {
+                // if uiConfig is set to true, enable dark mode
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            }
+        } else {
+            // defaults to light mode
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
 
         // Initializing the GUI elements
         TextView welcomeMessage = findViewById(R.id.welcomeText);
