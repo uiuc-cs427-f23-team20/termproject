@@ -22,7 +22,7 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
 
     private final String weatherBitUrl = "https://api.weatherbit.io/v2.0/current";
     //private final String weatherBitAppid = "01a058676dd44bbba82977c15214baaa"; 50 calls/day
-    private final String weatherBitAppid = "7efdeda16cf74897aa506f15f96e4ab6"; //1500 calls/day
+    private final String weatherBitAppid = "7efdeda16cf74897aa506f15f96e4ab6"; //1500 calls/day for 21 days till Nov-31, then change key
 
     String cityWeatherInfo="";
     TextView weatherInfoMessage;
@@ -39,9 +39,9 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
         if (extras != null) {
-            //String user = intent.getExtras().getString("username");
+            String user = intent.getExtras().getString("username");
             // Task #1: set new title
-            //setTitle("Team #20_" + user);
+            setTitle("Team #20_" + user);
             // Query database for uiConfig setting
             Boolean uiConfig = extras.getBoolean("uiConfig"); //myDB.checkUIConfig(user);
 
