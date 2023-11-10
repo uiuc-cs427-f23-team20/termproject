@@ -41,6 +41,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .position(new_york)
                 .title("Marker in New York"));
         this.mMap.moveCamera(CameraUpdateFactory.newLatLng(new_york));
+
+        // Add ZoomControls to enable zoom in/out interactive
+        this.mMap.getUiSettings().setZoomControlsEnabled(true);
     }
 }
 
