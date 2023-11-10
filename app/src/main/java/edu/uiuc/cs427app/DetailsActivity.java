@@ -30,17 +30,34 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
 
         // Process the Intent payload that has opened this Activity and show the information accordingly
         String cityName = getIntent().getStringExtra("city").toString();
-        String welcome = "Welcome to the "+cityName;
-        String cityWeatherInfo = "Detailed information about the weather of "+cityName;
+        String welcome = "\n\t\tWelcome to the "+cityName;
+        //String cityWeatherInfo = "Detailed information about the weather of "+cityName;
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
 
         // Initializing the GUI elements
         TextView welcomeMessage = findViewById(R.id.welcomeText);
-        TextView cityInfoMessage = findViewById(R.id.cityInfo);
+        //TextView cityInfoMessage = findViewById(R.id.cityInfo);
         welcomeMessage.setText(welcome);
-        cityInfoMessage.setText(cityWeatherInfo);
+        //cityInfoMessage.setText(cityWeatherInfo);
+
+        // Button for showing weather of city
+        Button buttonWeather = findViewById(R.id.weatherButton);
+        buttonWeather.setOnClickListener(this);
+
+        buttonWeather.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent;
+                intent = new Intent(view.getContext(), WeatherActivity.class);
+                intent.putExtra("city", extras.getString("city"));
+                intent.putExtra("username", extras.getString("username"));
+                intent.putExtra("cityId", extras.getString("cityId"));
+                intent.putExtra("uiConfig", extras.getBoolean("uiConfig"));
+                startActivity(intent);
+            }
+        });
 
         // Button for showing city on map
         Button buttonMap = findViewById(R.id.mapButton);
@@ -95,6 +112,5 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         // TODO: DO NOT DELETE THIS OR APP WILL CRASH!
 
     }
-
 }
 
