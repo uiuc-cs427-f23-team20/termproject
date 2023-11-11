@@ -44,7 +44,25 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
 
         // Button for showing city on map
         Button buttonMap = findViewById(R.id.mapButton);
-        buttonMap.setOnClickListener(this);
+        //buttonMap.setOnClickListener(this);
+
+
+        // Set click listener for the map button
+        buttonMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
+                intent.putExtra("cityId", extras.getString("cityId"));
+                intent.putExtra("cityName", extras.getString("city"));
+                startActivity(intent);
+            }
+        });
+
+
+
+
+
+
 
         // Button for deleting the city from user's saved cities
         Button buttonDelete = new Button(this);
@@ -77,5 +95,6 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         // TODO: DO NOT DELETE THIS OR APP WILL CRASH!
 
     }
+
 }
 
