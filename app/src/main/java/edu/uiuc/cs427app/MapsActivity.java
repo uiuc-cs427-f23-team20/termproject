@@ -12,6 +12,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Marker;
 
 //public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
@@ -51,9 +52,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Add a marker in New York and move the camera
         LatLng position = new LatLng(latitude, longitude);
         String title = cityName + "(Lat: " + Double.toString(latitude) + ", Long: " + Double.toString(longitude) + ")";
-        this.mMap.addMarker(new MarkerOptions()
+        Marker marker = this.mMap.addMarker(new MarkerOptions()
                 .position(position)
                 .title(title));
+        marker.showInfoWindow();
         this.mMap.moveCamera(CameraUpdateFactory.newLatLng(position));
 
         // Add ZoomControls to enable zoom in/out interactive
