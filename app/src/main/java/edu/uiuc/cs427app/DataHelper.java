@@ -188,17 +188,17 @@ public class DataHelper extends SQLiteOpenHelper {
         return userCities;
     }
 
-    public List<String> getCoords(String cityId) {
+    public List<Double> getCoords(String cityId) {
         // Retrieves latitude, longitude of city
         SQLiteDatabase myDB = this.getWritableDatabase();
         Cursor cursor = myDB.rawQuery("select * from cities where citi_id = ?", new String[]{cityId});
         cursor.moveToFirst();
 
-        List<String> coordinates = new ArrayList<>();
+        List<Double> coordinates = new ArrayList<>();
         int latIndex = cursor.getColumnIndex("latitude");
         int longIndex = cursor.getColumnIndex("longitude");
-        String latitude = cursor.getString(latIndex);
-        String longitude = cursor.getString(longIndex);
+        Double latitude = cursor.getDouble(latIndex);
+        Double longitude = cursor.getDouble(longIndex);
         coordinates.add(latitude);
         coordinates.add(longitude);
 
