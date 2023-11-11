@@ -49,7 +49,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Double longitude = coordinates.get(1);
 
 
-        // Add a marker in New York and move the camera
+        // Add a marker to city and move the camera
         LatLng position = new LatLng(latitude, longitude);
         String title = cityName + "(Lat: " + Double.toString(latitude) + ", Long: " + Double.toString(longitude) + ")";
         Marker marker = this.mMap.addMarker(new MarkerOptions()
