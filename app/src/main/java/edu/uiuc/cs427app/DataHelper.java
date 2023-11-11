@@ -24,7 +24,7 @@ public class DataHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase myDB){
-        /** Called when the database is created for the first time.*/
+        // Called when the database is created for the first time.
         // create users, cities, and users_cities table
         String createUsersTable = "create table users (netid varchar(20) not null, " +
                 "password varchar(20) not null, uiconfig int not null default 0, " +
@@ -65,41 +65,33 @@ public class DataHelper extends SQLiteOpenHelper {
         myDB.execSQL("drop Table if exists users");
     }
 
-    public Boolean insertUserData(String username, String password, int uiconfig){
+    public Boolean insertUserData(String username, String password, int uiConfig){
         // this method insert new user's username/password/UI Customization data into user table
         // returns True if new user was successfully created
         SQLiteDatabase myDB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("netid", username);
         contentValues.put("password", password);
-        contentValues.put("uiconfig", uiconfig);
+        contentValues.put("uiconfig", uiConfig);
 
         long result = myDB.insert("users", null, contentValues);
-        if (result == -1) {
-            return false;
-        } else {
-            return true;
-        }
+        return result != -1;
     }
     public Boolean checkUsername(String username){
         // returns True if username(netid) already exists in database
         SQLiteDatabase myDB = this.getWritableDatabase();
         Cursor cursor = myDB.rawQuery("Select * from users where netid = ?", new String[]{username});
-        if(cursor.getCount() > 0) {
-            return true;
-        }else {
-            return false;
-        }
+        Boolean isValidated = cursor.getCount() > 0;
+        cursor.close();
+        return isValidated;
     }
     public Boolean checkUsernamePassword(String username, String password){
         // returns True if username(netid) and password are validated
         SQLiteDatabase myDB = this.getWritableDatabase();
         Cursor cursor = myDB.rawQuery("Select * from users where netid = ? and password = ?", new String[]{username, password});
-        if (cursor.getCount() > 0) {
-            return true;
-        }else {
-            return false;
-        }
+        Boolean isValidated = cursor.getCount() > 0;
+        cursor.close();
+        return isValidated;
     }
 
     public Boolean checkUIConfig(String username){
@@ -109,7 +101,8 @@ public class DataHelper extends SQLiteOpenHelper {
         cursor.moveToFirst();
         if (cursor.getCount() > 0) {
             @SuppressLint("Range") int uiconfig = cursor.getInt(cursor.getColumnIndex("uiconfig"));
-            return uiconfig == 1 ? true : false;
+            cursor.close();
+            return uiconfig == 1;
         }
         return false;
     }
@@ -124,10 +117,11 @@ public class DataHelper extends SQLiteOpenHelper {
             String cityName = cursor.getString(1);
             citiesIdToName.put(cityId, cityName);
         }
+        cursor.close();
         return citiesIdToName;
     }
 
-    public Boolean insertUsersCities(String userId, String cityId) {
+    public boolean insertUsersCities(String userId, String cityId) {
         // this method insert userId and cityId into user_cities table
         // returns true if the insertion is successful
         SQLiteDatabase myDB = this.getWritableDatabase();
@@ -141,18 +135,13 @@ public class DataHelper extends SQLiteOpenHelper {
         contentValues.put("citi_id", cityId);
 
         long result = myDB.insert("user_cities", null, contentValues);
-        if (result == -1) {
-            return false;
-        } else {
-            return true;
-        }
+        return result != -1;
     }
 
     public boolean deleteUserCity(String userId, String citiId) {
         // Delete the record from the user_cities table
         // returns true if the insertion is successful
         SQLiteDatabase myDB = this.getWritableDatabase();
-        String tempCitiId = "2";
         int deletedRows = myDB.delete("user_cities", "user_id = ? and citi_id = ?",
                 new String[] {userId, citiId});
         return deletedRows>0;
@@ -172,6 +161,7 @@ public class DataHelper extends SQLiteOpenHelper {
             String cityName = cursor.getString(cityNameColIdx);
             cityIdToCityMap.put(cityId, cityName);
         }
+        cursor.close();
         return cityIdToCityMap;
     }
 
@@ -185,6 +175,7 @@ public class DataHelper extends SQLiteOpenHelper {
             String citiesId = cursor.getString(1);
             userCities.add(citiesId);
         }
+        cursor.close();
         return userCities;
     }
 
@@ -201,7 +192,32 @@ public class DataHelper extends SQLiteOpenHelper {
         Double longitude = cursor.getDouble(longIndex);
         coordinates.add(latitude);
         coordinates.add(longitude);
-
+        cursor.close();
         return coordinates;
+    }
+    
+    public CityTable getCitiesByCityId(String cityId) {
+        // Retrieves a map of city IDs to city names for cities associated with the given user ID
+        SQLiteDatabase myDB = this.getWritableDatabase();
+        Cursor cursor = myDB.rawQuery("select * from cities c  " +
+                " where citi_id = ?", new String[]{cityId});
+
+        CityTable cityTable = new CityTable();
+
+        int cityNameColIdx = cursor.getColumnIndex("citi_name");
+        int stateColIdx = cursor.getColumnIndex("state");
+        int countryColIdx = cursor.getColumnIndex("country");
+        int latitudeColIdx = cursor.getColumnIndex("latitude");
+        int longitudeColIdx = cursor.getColumnIndex("longitude");
+        while (cursor.moveToNext()) {
+            cityTable.setCitiId(cityId);
+            cityTable.setCitiName(cursor.getString(cityNameColIdx));
+            cityTable.setState(cursor.getString(stateColIdx));
+            cityTable.setCountry(cursor.getString(countryColIdx));
+            cityTable.setLatitude(cursor.getDouble(latitudeColIdx));
+            cityTable.setLongitude(cursor.getDouble(longitudeColIdx));
+        }
+        cursor.close();
+        return cityTable;
     }
 }

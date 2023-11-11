@@ -35,7 +35,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         myDB = new edu.uiuc.cs427app.DataHelper(this);
-
+        Boolean uiConfig=false;
 
         // Task #3: Displaying User's UI Settings
         // Check for intent extras passed from login
@@ -46,7 +46,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             // Task #1: set new title
             setTitle("Team #20_" + user);
             // Query database for uiConfig setting
-            Boolean uiConfig = myDB.checkUIConfig(user);
+            uiConfig = myDB.checkUIConfig(user);
             System.out.println(uiConfig);
             if (uiConfig) {
                 // if uiConfig is set to true, enable dark mode
@@ -86,6 +86,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             Button addCityButton = new Button(this);
             addCityButton.setLayoutParams(buttonParams);
             addCityButton.setText("View Detail");
+//            int finalUiConfig = uiConfig ? 1:0;
+            boolean  finalUiConfig = uiConfig;
             addCityButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -95,6 +97,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                     intent.putExtra("city", userCities.get(cityId));
                     intent.putExtra("username", extras.getString("username"));
                     intent.putExtra("cityId", cityId);
+                    intent.putExtra("uiConfig", finalUiConfig);
                     startActivity(intent);
                 }
             });

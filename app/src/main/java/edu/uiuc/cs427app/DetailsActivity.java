@@ -9,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 
 /**
@@ -30,17 +31,54 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
 
         // Process the Intent payload that has opened this Activity and show the information accordingly
         String cityName = getIntent().getStringExtra("city").toString();
-        String welcome = "Welcome to the "+cityName;
-        String cityWeatherInfo = "Detailed information about the weather of "+cityName;
+        String welcome = "\n\t\tWelcome to the "+cityName;
+        //String cityWeatherInfo = "Detailed information about the weather of "+cityName;
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
 
+
+        if (extras != null) {
+            String user = intent.getExtras().getString("username");
+            // Task #1: set new title
+            setTitle("Team #20_" + user);
+            // Query database for uiConfig setting
+            Boolean uiConfig = extras.getBoolean("uiConfig"); //myDB.checkUIConfig(user);
+
+            System.out.println(uiConfig);
+            if (uiConfig) {
+                // if uiConfig is set to true, enable dark mode
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            }
+        } else {
+            // defaults to light mode
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
+
         // Initializing the GUI elements
         TextView welcomeMessage = findViewById(R.id.welcomeText);
-        TextView cityInfoMessage = findViewById(R.id.cityInfo);
+        //TextView cityInfoMessage = findViewById(R.id.cityInfo);
         welcomeMessage.setText(welcome);
-        cityInfoMessage.setText(cityWeatherInfo);
+        //cityInfoMessage.setText(cityWeatherInfo);
+
+        // Button for showing weather of city
+        Button buttonWeather = findViewById(R.id.weatherButton);
+        buttonWeather.setOnClickListener(this);
+
+        buttonWeather.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent;
+                intent = new Intent(view.getContext(), WeatherActivity.class);
+                intent.putExtra("city", extras.getString("city"));
+                intent.putExtra("username", extras.getString("username"));
+                intent.putExtra("cityId", extras.getString("cityId"));
+                intent.putExtra("uiConfig", extras.getBoolean("uiConfig"));
+                startActivity(intent);
+            }
+        });
 
         // Button for showing city on map
         Button buttonMap = findViewById(R.id.mapButton);
@@ -95,6 +133,5 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         // TODO: DO NOT DELETE THIS OR APP WILL CRASH!
 
     }
-
 }
 
