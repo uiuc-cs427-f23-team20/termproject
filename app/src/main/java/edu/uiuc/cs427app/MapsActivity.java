@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 
 import android.os.Bundle;
+import java.util.List;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -16,11 +17,12 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-
+    edu.uiuc.cs427app.DataHelper myDB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -34,13 +36,25 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
         this.mMap = googleMap;
+        myDB = new edu.uiuc.cs427app.DataHelper(this);
+
+        // Retrieve city_id from Intent
+        String cityId = getIntent().getStringExtra("cityId").toString();
+        String cityName = getIntent().getStringExtra("cityName");
+
+        // Call method from DataHelper to load coordinates
+        List<Double> coordinates = myDB.getCoords(cityId);
+        Double latitude = coordinates.get(0);
+        Double longitude = coordinates.get(1);
+
 
         // Add a marker in New York and move the camera
-        LatLng new_york = new LatLng(40.731, -73.935);
+        LatLng position = new LatLng(latitude, longitude);
+        String title = cityName + "(Lat: " + Double.toString(latitude) + ", Long: " + Double.toString(longitude) + ")";
         this.mMap.addMarker(new MarkerOptions()
-                .position(new_york)
-                .title("Marker in New York"));
-        this.mMap.moveCamera(CameraUpdateFactory.newLatLng(new_york));
+                .position(position)
+                .title(title));
+        this.mMap.moveCamera(CameraUpdateFactory.newLatLng(position));
 
         // Add ZoomControls to enable zoom in/out interactive
         this.mMap.getUiSettings().setZoomControlsEnabled(true);
