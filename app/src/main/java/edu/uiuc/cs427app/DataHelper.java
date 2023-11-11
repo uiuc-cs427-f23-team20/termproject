@@ -32,8 +32,8 @@ public class DataHelper extends SQLiteOpenHelper {
 
         String createCitiesTable = "create table cities (citi_id varchar(200) not null,  " +
                 "citi_name varchar(50) not null,  state varchar(50),  " +
-                "country varchar(50), latitude decimal(5,2), " +
-                "longitude decimal(5,2),  map_api_id int, " +
+                "country varchar(50), latitude decimal(8,6), " +
+                "longitude decimal(9,6),  map_api_id int, " +
                 "weather_api_id int, popular int default 0, " +
                 "primary key(citi_id)) ;";
 
@@ -44,13 +44,13 @@ public class DataHelper extends SQLiteOpenHelper {
 
         // adds cities records - subject to change in milestone 4
         List<String> insertBaseCities = new ArrayList<>();
-        insertBaseCities.add("INSERT INTO cities (citi_id, citi_name) VALUES(1, 'Champaign');");
-        insertBaseCities.add("INSERT INTO cities (citi_id, citi_name) VALUES(2, 'Chicago');");
-        insertBaseCities.add("INSERT INTO cities (citi_id, citi_name) VALUES(3, 'Los Angeles');");
-        insertBaseCities.add("INSERT INTO cities (citi_id, citi_name) VALUES(4, 'San Francisco');");
-        insertBaseCities.add("INSERT INTO cities (citi_id, citi_name) VALUES(5, 'Seattle');");
-        insertBaseCities.add("INSERT INTO cities (citi_id, citi_name) VALUES(6, 'New York City');");
-        insertBaseCities.add("INSERT INTO cities (citi_id, citi_name) VALUES(7, 'Miami');");
+        insertBaseCities.add("INSERT INTO cities (citi_id, citi_name, latitude, longitude) VALUES(1, 'Champaign', 40.116329, -88.243523);");
+        insertBaseCities.add("INSERT INTO cities (citi_id, citi_name, latitude, longitude) VALUES(2, 'Chicago', 41.878113, -87.629799);");
+        insertBaseCities.add("INSERT INTO cities (citi_id, citi_name, latitude, longitude) VALUES(3, 'Los Angeles', 34.052235, -118.243683);");
+        insertBaseCities.add("INSERT INTO cities (citi_id, citi_name, latitude, longitude) VALUES(4, 'San Francisco', 37.774929, -122.419418);");
+        insertBaseCities.add("INSERT INTO cities (citi_id, citi_name, latitude, longitude) VALUES(5, 'Seattle', 47.606209, -122.332069);");
+        insertBaseCities.add("INSERT INTO cities (citi_id, citi_name, latitude, longitude) VALUES(6, 'New York City', 40.730610, -73.935242);");
+        insertBaseCities.add("INSERT INTO cities (citi_id, citi_name, latitude, longitude) VALUES(7, 'Miami', 25.761681, -80.191788);");
 
         myDB.execSQL(createUsersTable);
         myDB.execSQL(createCitiesTable);
@@ -186,5 +186,21 @@ public class DataHelper extends SQLiteOpenHelper {
             userCities.add(citiesId);
         }
         return userCities;
+    }
+
+    public List<String> getCoords(String cityId) {
+        SQLiteDatabase myDB = this.getWritableDatabase();
+        Cursor cursor = myDB.rawQuery("select * from cities where citi_id = ?", new String[]{cityId});
+        cursor.moveToFirst();
+
+        List<String> coordinates = new ArrayList<>();
+        int latIndex = cursor.getColumnIndex("latitude");
+        int longIndex = cursor.getColumnIndex("longitude");
+        String latitude = cursor.getString(latIndex);
+        String longitude = cursor.getString(longIndex);
+        coordinates.add(latitude);
+        coordinates.add(longitude);
+
+        return coordinates;
     }
 }
