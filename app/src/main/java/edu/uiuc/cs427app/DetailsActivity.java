@@ -52,6 +52,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
+                intent.putExtra("cityId", extras.getString("cityId"));
                 startActivity(intent);
             }
         });

@@ -189,6 +189,7 @@ public class DataHelper extends SQLiteOpenHelper {
     }
 
     public List<String> getCoords(String cityId) {
+        // Retrieves latitude, longitude of city
         SQLiteDatabase myDB = this.getWritableDatabase();
         Cursor cursor = myDB.rawQuery("select * from cities where citi_id = ?", new String[]{cityId});
         cursor.moveToFirst();
