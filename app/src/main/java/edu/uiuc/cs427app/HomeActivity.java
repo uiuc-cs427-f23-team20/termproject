@@ -84,12 +84,12 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             cityNameView.setText(userCities.get(cityId));
 
             // Create Button to view city details
-            Button addCityButton = new Button(this);
-            addCityButton.setLayoutParams(buttonParams);
-            addCityButton.setText("View Detail");
+            Button viewDetailButton = new Button(this);
+            viewDetailButton.setLayoutParams(buttonParams);
+            viewDetailButton.setText("View Detail");
 //            int finalUiConfig = uiConfig ? 1:0;
             boolean  finalUiConfig = uiConfig;
-            addCityButton.setOnClickListener(new View.OnClickListener() {
+            viewDetailButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     // Handle button click, navigate to DetailsActivity with city details
@@ -105,7 +105,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
             // Add TextView and Button to the city's layout; Add the city's layout to the outer layout
             cityLayout.addView(cityNameView);
-            cityLayout.addView(addCityButton);
+            cityLayout.addView(viewDetailButton);
             outerLayout.addView(cityLayout);
         }
 
