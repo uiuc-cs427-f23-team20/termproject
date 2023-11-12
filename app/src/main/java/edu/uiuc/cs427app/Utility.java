@@ -1,6 +1,5 @@
 package edu.uiuc.cs427app;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -8,11 +7,10 @@ import java.io.StringWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.DecimalFormat;
-
-import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.util.Log;
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -71,7 +69,8 @@ public class Utility {
                 String cityName = jsonDataNode.getString("city_name");
                 String stateName = jsonDataNode.getString("state_code");
                 //String dateTime = jsonDataNode.getString("ob_time");
-                //String timezone = jsonDataNode.getString("timezone");
+                int timeStamp = jsonDataNode.getInt("ts");
+                String timezone = jsonDataNode.getString("timezone");
                 // time can not be used as it is last observed time, and the time is not current time
                 int uv = jsonDataNode.getInt("uv");
                 int vis = jsonDataNode.getInt("vis");
@@ -105,15 +104,24 @@ public class Utility {
                 else
                     if (countryName!=null && countryName.trim().length()>0) location+=countryName.trim();
 
+                Instant instant = Instant.ofEpochSecond( timeStamp );
+                ZoneId z = ZoneId.of( timezone ) ;
+                ZonedDateTime zdt = instant.atZone( z );
+                //System.out.println("Weather ZonedDateTime: " + zdt);
+
+                final DateTimeFormatter DATETIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MMM-dd HH:mm:ss");
+                String dateStr = zdt.format(DATETIME_FORMATTER);
+
+
                 output = "\t\t Location : "+location
-                        //+ "\n\t\t Date/Time : "+dateTime
-                        //+ "\n\t\t Tome-zone : "+timezone (can not be used, not current time)
+                        + "\n\t\t Local Time : "+dateStr
+                        + "\n\t\t Tome-zone : "+timezone
                         + "\n\t\t Temperature: " + df.format(temp) + " °C"
                         + "\n\t\t Feels Like: " + df.format(feelsLike) + " °C"
                         + "\n\t\t Weather: " + description
-                        + "\n\t\t Cloudiness: " + clouds + "%"
-                        + "\n\t\t Humidity: " + humidity + "%"
-                        + "\n\t\t Wind Speed: " + windSpeed + " m/s" //  (meters per second)
+                        + "\n\t\t Cloudiness: " +clouds + " %"
+                        + "\n\t\t Humidity: " + df.format(humidity) + " %"
+                        + "\n\t\t Wind Speed: " + df.format(windSpeed) + " m/s" //  (meters per second)
                         + "\n\t\t Wind Direction: " + winDir
                         + "\n\t\t UV Index: " + uv+uvDesc
                         + "\n\t\t Visibility: " +vis+" Km"
