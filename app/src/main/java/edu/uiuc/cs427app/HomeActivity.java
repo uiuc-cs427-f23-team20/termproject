@@ -48,7 +48,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             setTitle("Team #20_" + user);
             // Query database for uiConfig setting
             uiConfig = myDB.checkUIConfig(user);
-            System.out.println(uiConfig);
+
             if (uiConfig) {
                 // if uiConfig is set to true, enable dark mode
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);

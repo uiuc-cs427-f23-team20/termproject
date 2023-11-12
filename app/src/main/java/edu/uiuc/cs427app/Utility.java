@@ -26,7 +26,6 @@ public class Utility {
 
      public static String downloadDataFromUrlWeatherBit(String myurl)  {
         InputStream is = null;
-        System.out.println(" inside downloadDataFromUrl");
 
         try {
             URL url = new URL(myurl);
@@ -39,13 +38,10 @@ public class Utility {
             conn.connect(); // calling the web address
             int response = conn.getResponseCode();
 
-            System.out.println("Weather  myurl: " + myurl);
-            System.out.println("Weather  response: " + response);
             is = conn.getInputStream();
 
             // Convert the InputStream into a string
             String contentAsString = readInputStream(is);
-            System.out.println("Weather contentAsString: " + contentAsString);
 
             String output = "Something Wrong";
             DecimalFormat df = new DecimalFormat("#.##");
@@ -107,7 +103,6 @@ public class Utility {
                 Instant instant = Instant.ofEpochSecond( timeStamp );
                 ZoneId z = ZoneId.of( timezone ) ;
                 ZonedDateTime zdt = instant.atZone( z );
-                //System.out.println("Weather ZonedDateTime: " + zdt);
 
                 final DateTimeFormatter DATETIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MMM-dd HH:mm:ss");
                 String dateStr = zdt.format(DATETIME_FORMATTER);
@@ -136,7 +131,6 @@ public class Utility {
             // Makes sure that the InputStream is closed after the app is
             // finished using it.
         } catch (Exception e) {
-            System.out.println("Weather  conn error : " + e.toString());
             e.printStackTrace();
             if (is != null) {
                 try {

@@ -46,7 +46,6 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
             // Query database for uiConfig setting
             Boolean uiConfig = extras.getBoolean("uiConfig"); //myDB.checkUIConfig(user);
 
-            System.out.println(uiConfig);
             if (uiConfig) {
                 // if uiConfig is set to true, enable dark mode
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
@@ -73,7 +72,6 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
         String tempWeatherBitUrl = "";
         if (cityId!=null && cityId.length()>0) {
             CityTable cityTable = myDB.getCitiesByCityId(cityId);
-            System.out.println("Weather cityId = "+cityId+" cityName = "+cityName+" cityTable: " + cityTable);
             if (cityTable !=null && ! Double.isNaN(cityTable.getLatitude()) && ! Double.isNaN(cityTable.getLongitude())
                                  && cityTable.getLatitude() != 0.0 && cityTable.getLongitude() != 0.0) {
                 tempWeatherBitUrl  = weatherBitUrl +  "?lat=" + Double.toString(cityTable.getLatitude()).trim()
@@ -93,8 +91,6 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
             else
                 tempWeatherBitUrl  = weatherBitUrl +  "?city_id=" + cityId.trim().replace(' ','+') + "&key=" + weatherBitAppid;
         }
-
-        System.out.println("WeatherBit tempUrltempWeatherBitUrl: " + tempWeatherBitUrl);
 
         new GetJSONTaskWeatherBit().execute(tempWeatherBitUrl); //execute asynctask object this will resolve NetworkOnMainThreadExcection
 
@@ -126,7 +122,6 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
         protected String doInBackground(String... urls) {
             try {
                 String aa = Utility.downloadDataFromUrlWeatherBit(urls[0]);
-                System.out.println("Weather  Utility.downloadDataFromUrlWeatherBit: " + aa);
                 return aa;
             } catch (Exception e) {
                 return "Unable to retrieve data. URL may be invalid.";
@@ -139,7 +134,6 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
         protected void onPostExecute(String result) {
             cityWeatherInfo =  "\t\tCurrent weather :\n\n";
             String detailWeather=cityWeatherInfo + result;
-            System.out.println("Weather detailWeather: " + detailWeather);
             weatherInfoMessage.setText(detailWeather);
         }
     }

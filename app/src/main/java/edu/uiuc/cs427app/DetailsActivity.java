@@ -45,7 +45,6 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
             // Query database for uiConfig setting
             Boolean uiConfig = extras.getBoolean("uiConfig"); //myDB.checkUIConfig(user);
 
-            System.out.println(uiConfig);
             if (uiConfig) {
                 // if uiConfig is set to true, enable dark mode
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
