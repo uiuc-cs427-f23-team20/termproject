@@ -182,10 +182,12 @@ public class DataHelper extends SQLiteOpenHelper {
         Map<String, String> cityIdToCityMap = new HashMap<>();
         int cityIdColIdx = cursor.getColumnIndex("citi_id");
         int cityNameColIdx = cursor.getColumnIndex("citi_name");
+        int cityStateColIdx = cursor.getColumnIndex("state");
         while (cursor.moveToNext()) {
             String cityId = cursor.getString(cityIdColIdx);
             String cityName = cursor.getString(cityNameColIdx);
-            cityIdToCityMap.put(cityId, cityName);
+            String cityState = cursor.getString(cityStateColIdx);
+            cityIdToCityMap.put(cityId, cityName + ", " + cityState);
         }
         cursor.close();
         return cityIdToCityMap;
