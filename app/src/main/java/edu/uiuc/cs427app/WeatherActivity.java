@@ -27,6 +27,7 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
     String cityWeatherInfo="";
     TextView weatherInfoMessage;
 
+    // on create weather activity page , do this activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,12 +113,15 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
 
     }
 
+    // execute asynctask object this will resolve NetworkOnMainThreadExcection
+    // this will request http  to get data from weatherbit site using Utility.downloadDataFromUrlWeatherBit method
     private class GetJSONTaskWeatherBit extends AsyncTask<String, Void, String> {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
         }
-
+        
+        // get data from weatherbit site using given url
         @Override
         protected String doInBackground(String... urls) {
             try {
@@ -129,6 +133,8 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
             }
 
         }
+
+        // after getting data from weatherbit site push to weatherInfoMessage textbox to display
         @Override
         protected void onPostExecute(String result) {
             cityWeatherInfo =  "\t\tCurrent weather :\n\n";
