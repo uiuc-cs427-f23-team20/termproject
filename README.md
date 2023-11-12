@@ -145,13 +145,13 @@ Meeting notes: In this week's meeting we first talked about lessons learned from
 
 <b>Week 7</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: kf17, luxiay2, uroy, meng29, zerenlu2, rkuhlm2, tonyj2
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: A touchbase meeting on progress. Map team was able to get the map api work in our app, and weather team has successfully tested HTTP GET call.
 </br>
 | NetID | Progress from last week | Tasks for next week |
 | ---------------| --------------------------------| ----------------------|
-| | | |
+| meng29 | Successfully tested WeatherBit API. | Assist weather team and complete milestone 4 before Sunday. |
 | | | |
 | | | |
 | | | |
