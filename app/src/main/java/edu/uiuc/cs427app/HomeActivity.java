@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -108,6 +109,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             outerLayout.addView(cityLayout);
         }
 
+        EditText cityNameInput = new EditText(this);
+        cityNameInput.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        cityNameInput.setHint("Enter city name (case sensitive)");
+        outerLayout.addView(cityNameInput);
+
         // Button to add a new city
         Button buttonAddCity = new Button(this);
         buttonAddCity.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
@@ -119,6 +125,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent;
                 intent = new Intent(view.getContext(), AddCitiesActivity.class);
                 intent.putExtra("username",extras.getString("username"));
+                intent.putExtra("inputCityName",cityNameInput.getText().toString());
                 startActivity(intent);
             }
         });

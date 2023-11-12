@@ -40,7 +40,7 @@ public class AddCitiesActivity extends AppCompatActivity implements View.OnClick
 
         // Retrieve a map of city IDs to names from the local database
         // Iterate through the cities and dynamically create UI elements
-        Map<String, String> citiesIdToName = myDB.getAllCities();
+        Map<String, String> citiesIdToName = myDB.getFilteredCities(extras.getString("inputCityName"));
         for (String cityId : citiesIdToName.keySet()) {
             LinearLayout cityLayout = new LinearLayout(this);
             cityLayout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));

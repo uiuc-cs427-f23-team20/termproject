@@ -3,10 +3,15 @@ package edu.uiuc.cs427app;
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -17,8 +22,10 @@ import java.util.Map;
  */
 public class DataHelper extends SQLiteOpenHelper {
     // public static final String databaseName = "login.db";
+    Context mContext;
     public DataHelper(Context context) {
         super(context, "cityApp.db", null, 1);
+        mContext = context;
     }
 
 
@@ -42,22 +49,42 @@ public class DataHelper extends SQLiteOpenHelper {
                 "CONSTRAINT FK_CITY FOREIGN KEY(citi_id) REFERENCES cities(citi_id), " +
                 "primary key(user_id,citi_id) ) ;";
 
-        // adds cities records - subject to change in milestone 4
-        List<String> insertBaseCities = new ArrayList<>();
-        insertBaseCities.add("INSERT INTO cities (citi_id, citi_name, latitude, longitude) VALUES(1, 'Champaign', 40.116329, -88.243523);");
-        insertBaseCities.add("INSERT INTO cities (citi_id, citi_name, latitude, longitude) VALUES(2, 'Chicago', 41.878113, -87.629799);");
-        insertBaseCities.add("INSERT INTO cities (citi_id, citi_name, latitude, longitude) VALUES(3, 'Los Angeles', 34.052235, -118.243683);");
-        insertBaseCities.add("INSERT INTO cities (citi_id, citi_name, latitude, longitude) VALUES(4, 'San Francisco', 37.774929, -122.419418);");
-        insertBaseCities.add("INSERT INTO cities (citi_id, citi_name, latitude, longitude) VALUES(5, 'Seattle', 47.606209, -122.332069);");
-        insertBaseCities.add("INSERT INTO cities (citi_id, citi_name, latitude, longitude) VALUES(6, 'New York City', 40.730610, -73.935242);");
-        insertBaseCities.add("INSERT INTO cities (citi_id, citi_name, latitude, longitude) VALUES(7, 'Miami', 25.761681, -80.191788);");
-
         myDB.execSQL(createUsersTable);
         myDB.execSQL(createCitiesTable);
         myDB.execSQL(createUsersCitiesTable);
-        for (String baseCity : insertBaseCities) {
-            myDB.execSQL(baseCity);
+
+        String mCSVfile = "all_us_cities.csv";
+        AssetManager manager = mContext.getAssets();
+        InputStream inStream = null;
+        try {
+            inStream = manager.open(mCSVfile);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+
+        BufferedReader buffer = new BufferedReader(new InputStreamReader(inStream));
+        String line = "";
+        myDB.beginTransaction();
+        try {
+            while ((line = buffer.readLine()) != null) {
+                String[] colums = line.split(",");
+                if (colums.length != 7) {
+                    continue;
+                }
+                ContentValues cv = new ContentValues(3);
+                cv.put("citi_id", colums[0].trim());
+                cv.put("citi_name", colums[1].trim());
+                cv.put("state", colums[2].trim());
+                cv.put("country", colums[4].trim());
+                cv.put("latitude", colums[5].trim());
+                cv.put("longitude", colums[6].trim());
+                myDB.insert("cities", null, cv);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        myDB.setTransactionSuccessful();
+        myDB.endTransaction();
     }
     @Override
     public void onUpgrade(SQLiteDatabase myDB, int oldVersion, int newVersion) {
@@ -107,17 +134,16 @@ public class DataHelper extends SQLiteOpenHelper {
         return false;
     }
 
-    public Map<String, String> getAllCities() {
+    public Map<String, String> getFilteredCities(String filterName) {
         // returns a hashmap of all cityIds to cityNames in the cities table
         Map<String, String> citiesIdToName = new HashMap<>();
         SQLiteDatabase myDB = this.getWritableDatabase();
-        Cursor cursor = myDB.rawQuery("Select * from cities", null);
+        Cursor cursor = myDB.rawQuery("Select * from cities where citi_name = ?", new String[]{filterName});
         while (cursor.moveToNext()) {
             String cityId = cursor.getString(0);
-            String cityName = cursor.getString(1);
+            String cityName = cursor.getString(1) + ", " + cursor.getString(2);
             citiesIdToName.put(cityId, cityName);
         }
-        cursor.close();
         return citiesIdToName;
     }
 
