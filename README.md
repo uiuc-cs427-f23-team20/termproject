@@ -134,7 +134,7 @@ Meeting notes: In this week's meeting we first talked about lessons learned from
 | NetID | Progress from last week | Tasks for next week |
 | ---------------| --------------------------------| ----------------------|
 | meng29 | Milestone 3 completed! | Research on WeatherBit API before next week's meeting. |
-| | | |
+| kf17 | Prep for Milestone 4. | Research map functionality via webview widget. |
 | | | |
 | | | |
 | | | |
@@ -152,7 +152,7 @@ Meeting notes: A touchbase meeting on progress. Map team was able to get the map
 | NetID | Progress from last week | Tasks for next week |
 | ---------------| --------------------------------| ----------------------|
 | meng29 | Successfully tested WeatherBit API. | Assist weather team and complete milestone 4 before Sunday. |
-| | | |
+| kf17 | Test map functionality via webview widget. Help with testing Google Map SDK. | Implement map service and merge map and weather code to main branch. Troubleshoot any issues. Prepare deliverables for Sunday, including video.|
 | | | |
 | | | |
 | | | |
