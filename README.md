@@ -101,7 +101,7 @@ Detailed meeting notes can be found in this Google doc using your UIUC credentia
 | kf17 | Research tech requirements for milestone 3. | Implement task #3 for milestone 3. |
 | tonyj2| Investiaged and planned for milesone 3 with the team | Start working on milestone 3 task 2 with sicheng |
 |luxiay2 | Research on technique for the authentication page.  | Start working on milestone 3 task 1 with Zeren.  |
-| | | |
+|rkuhlm2 |Research on task 3. |Start working om milestone 3 task. |
 | | | |
 | | | |
 | | | |
