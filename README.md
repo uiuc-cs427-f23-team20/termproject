@@ -135,7 +135,7 @@ Meeting notes: In this week's meeting we first talked about lessons learned from
 | ---------------| --------------------------------| ----------------------|
 | meng29 | Milestone 3 completed! | Research on WeatherBit API before next week's meeting. |
 | kf17 | Prep for Milestone 4. | Research map functionality via webview widget. |
-| | | |
+|luxiay2 |Prep for Milestone 4. |Reserch on Google Map SDK. |
 | | | |
 | | | |
 | | | |
@@ -153,7 +153,7 @@ Meeting notes: A touchbase meeting on progress. Map team was able to get the map
 | ---------------| --------------------------------| ----------------------|
 | meng29 | Successfully tested WeatherBit API. | Assist weather team and complete milestone 4 before Sunday. |
 | kf17 | Test map functionality via webview widget. Help with testing Google Map SDK. | Implement map service and merge map and weather code to main branch. Troubleshoot any issues. Prepare deliverables for Sunday, including video.|
-| | | |
+|luxiay2 | Worked on creating mapActivity using Google Map SDK. Helped with testing map via webview widget.|Finish milestion4 task2 to show the reactive map.|
 | | | |
 | | | |
 | | | |
