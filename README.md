@@ -101,7 +101,7 @@ Detailed meeting notes can be found in this Google doc using your UIUC credentia
 | kf17 | Research tech requirements for milestone 3. | Implement task #3 for milestone 3. |
 | tonyj2| Investiaged and planned for milesone 3 with the team | Start working on milestone 3 task 2 with sicheng |
 |luxiay2 | Research on technique for the authentication page.  | Start working on milestone 3 task 1 with Zeren.  |
-| | | |
+| uroy| Investigated and research for milesone 3 with the team | Start working on milestone 3|
 | | | |
 | | | |
 | | | |
@@ -119,7 +119,7 @@ Meeting notes: Touch base, research and brainstorming session. Each coding pair 
 | kf17| Implement Task #3 | Complete task #3. Assist team with code-pairing, Git issues, etc to finish milestone 3. |
 | tonyj2 | Create logic for initalizing sqlite database, parts of data query, insert, and delete functions, logic for displaying all cities in add city page, logic for adding a specific city for logged in user, logic for deleting a city for user | Complete milestone 3 and plan for milestone 4|
 |luxiay2 |  Develop the Signup and Login pages, and the function of displaying username.  | Complete milestone 3 task1. |
-| | | |
+| uroy|Testing for milestone-3 | plan for milestone 4|
 | | | |
 | | | |
 | | | |
@@ -137,7 +137,7 @@ Meeting notes: In this week's meeting we first talked about lessons learned from
 | kf17 | Prep for Milestone 4. | Research map functionality via webview widget. |
 |luxiay2 |Prep for Milestone 4. |Reserch on Google Map SDK. |
 |tonyj2 |Prep for milestone 4 | Support the team on researching for weather APIs and think about redesigning add cities interface |
-| | | |
+| uroy| Prep for milestone 4| Reasearc on OpenWeatherMap API  before next week's meeting.|
 | | | |
 | | | |
 | | | |
@@ -155,7 +155,7 @@ Meeting notes: A touchbase meeting on progress. Map team was able to get the map
 | kf17 | Test map functionality via webview widget. Help with testing Google Map SDK. | Implement map service and merge map and weather code to main branch. Troubleshoot any issues. Prepare deliverables for Sunday, including video.|
 |luxiay2 | Worked on creating mapActivity using Google Map SDK. Helped with testing map via webview widget.|Finish milestion4 task2 to show the reactive map.|
 |tonyj2 | Created logic for loading all US cities and detailed into into database, textbox in homeActivity to search for city, and filter in addCities page to filter city selection based on input name | Finished milestone 4 |
-| | | |
+| uroy| Successfully tested OpenWeatherMap API | Implement weather page using WeatherBit API, testing weather page|
 | | | |
 | | | |
 | | | |
