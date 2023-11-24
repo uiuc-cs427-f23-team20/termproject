@@ -248,4 +248,16 @@ public class DataHelper extends SQLiteOpenHelper {
         cursor.close();
         return cityTable;
     }
+    public Map<String, String> getRandomCity() {
+        // Retrieves random record from cities table
+        Map<String, String> randomCity = new HashMap<>();
+        SQLiteDatabase myDB = this.getWritableDatabase();
+        Cursor cursor = myDB.rawQuery("select * from cities order by RANDOM() limit 1", null);
+        cursor.moveToFirst();
+        randomCity.put("cityId", cursor.getString(0));
+        randomCity.put("cityName", cursor.getString(1) + ", " + cursor.getString(2));
+        randomCity.put("latitude", cursor.getString(4));
+        randomCity.put("longitude", cursor.getString(5));
+        return randomCity;
+    }
 }
