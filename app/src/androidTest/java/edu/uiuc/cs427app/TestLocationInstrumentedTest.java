@@ -20,13 +20,13 @@ import org.junit.runner.RunWith;
 import java.util.Map;
 
 @RunWith(AndroidJUnit4.class)
-public class MapInstrumentedTest {
+public class TestLocationInstrumentedTest {
     private Context context = InstrumentationRegistry.getInstrumentation().getTargetContext();
     private Integer SLEEP = 3000;
     edu.uiuc.cs427app.DataHelper myDB;
 
     @Test
-    public void MapTestLocationA() throws Exception {
+    public void TestLocationA() throws Exception {
         myDB = new edu.uiuc.cs427app.DataHelper(context);
 
         // Get random city
@@ -58,7 +58,7 @@ public class MapInstrumentedTest {
     }
 
     @Test
-    public void MapTestLocationB() throws Exception {
+    public void TestLocationB() throws Exception {
         myDB = new edu.uiuc.cs427app.DataHelper(context);
 
         // Get random city
@@ -88,6 +88,5 @@ public class MapInstrumentedTest {
         onView(withId(R.id.mapCityCoords)).check(matches(withText(containsString(latitude))));
         onView(withId(R.id.mapCityCoords)).check(matches(withText(containsString(longitude))));
     }
-
 
 }
