@@ -256,8 +256,10 @@ public class DataHelper extends SQLiteOpenHelper {
         cursor.moveToFirst();
         randomCity.put("cityId", cursor.getString(0));
         randomCity.put("cityName", cursor.getString(1) + ", " + cursor.getString(2));
-        randomCity.put("latitude", cursor.getString(4));
-        randomCity.put("longitude", cursor.getString(5));
+        Double lat = cursor.getDouble(4);
+        Double lon = cursor.getDouble(5);
+        randomCity.put("latitude", lat.toString());
+        randomCity.put("longitude", lon.toString());
         return randomCity;
     }
 }
