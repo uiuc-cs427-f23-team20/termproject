@@ -4,8 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 
 import android.os.Bundle;
+import android.widget.TextView;
 import java.util.List;
-import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -38,24 +38,30 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         this.mMap = googleMap;
         myDB = new edu.uiuc.cs427app.DataHelper(this);
 
-        // Retrieve city_id from Intent
+        // Retrieve selected city from Intent
         String cityId = getIntent().getStringExtra("cityId").toString();
         String cityName = getIntent().getStringExtra("cityName");
 
-        // Call method from DataHelper to load coordinates
-        List<Double> coordinates = myDB.getCoords(cityId);
-        Double latitude = coordinates.get(0);
-        Double longitude = coordinates.get(1);
+        // Retrieve coordinates from database
+        List<Double> latLong = myDB.getCoords(cityId);
+        Double latitude = latLong.get(0);
+        Double longitude = latLong.get(1);
+        String coordinates = "Lat: " + Double.toString(latitude) + ", Long: " + Double.toString(longitude);
 
+        // Display selected city name and coordinates
+        TextView textCityName = findViewById(R.id.mapCityName);
+        textCityName.setText(cityName);
+        TextView textCityCoordinates = findViewById(R.id.mapCityCoords);
+        textCityCoordinates.setText(coordinates);
 
         // Add a marker to city and move the camera
         LatLng position = new LatLng(latitude, longitude);
-        String title = cityName + "(Lat: " + Double.toString(latitude) + ", Long: " + Double.toString(longitude) + ")";
         Marker marker = this.mMap.addMarker(new MarkerOptions()
                 .position(position)
-                .title(title));
+                .title(cityName + " - " + coordinates));
         marker.showInfoWindow();
         this.mMap.moveCamera(CameraUpdateFactory.newLatLng(position));
+        this.mMap.moveCamera(CameraUpdateFactory.zoomTo(13));
 
         // Add ZoomControls to enable zoom in/out interactive
         this.mMap.getUiSettings().setZoomControlsEnabled(true);
