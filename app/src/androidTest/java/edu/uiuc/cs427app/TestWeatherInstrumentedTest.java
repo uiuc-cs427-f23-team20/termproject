@@ -132,112 +132,7 @@ public class TestWeatherInstrumentedTest {
         System.out.println("TestWeather_2 : cityWeatherInfo = "+cityWeatherInfo);
 
     }
-/*
-TestWeather_3 and TestWeather_4 failed, not sure why, so excluded.
-    @Test
-    public void TestWeather_3() throws Exception {
-        // test for a random city and get weatherbit information using cityId
 
-        myDB = new DataHelper(context);
-
-        // Get random city
-        Map<String, String> city = myDB.getRandomCity();
-        String cityId = city.get("cityId");
-        String cityName = city.get("cityName");
-        //String latitude = city.get("latitude").toString();
-        //String longitude = city.get("longitude").toString();
-
-        String welcome = "\n\t\tWelcome to the "+cityName;
-        cityWeatherInfo = "Detailed information about the weather of "+cityName;
-
-        assertNotNull("TestWeather_3 : cityId null",cityId);
-        assertTrue("TestWeather_3 : cityId has no value",cityId.trim().replace(' ','+').length()>0);
-
-        String tempWeatherBitUrl = "";
-        tempWeatherBitUrl  = weatherBitUrl +  "?city_id=" + cityId.trim().replace(' ','+') + "&key=" + weatherBitAppid;
-
-        new GetJSONTaskWeatherBit().execute(tempWeatherBitUrl); //execute asynctask object this will resolve NetworkOnMainThreadExcection
-
-        // Create new intent
-        Intent intent = new Intent();
-        intent.setClass(context, DetailsActivity.class);
-        intent.putExtra("cityId", cityId);
-        intent.putExtra("city", cityName);
-        intent.putExtra("username", "test_user");
-
-        // Launch DetailsActivity with custom intent
-        ActivityScenario.launch(intent);
-        Thread.sleep(SLEEP);
-        onView(withText("SHOW WEATHER")).perform(click());
-        Thread.sleep(SLEEP);
-
-        // Checks for welcome message
-        onView(withId(R.id.weatherWelcomeText)).check(matches(withText(welcome)));
-
-        // Checks for city weather information
-        onView(withId(R.id.weatherInfo)).check(matches(withText(cityWeatherInfo)));
-
-        System.out.println("TestWeather_3 : welcome message = "+welcome);
-        System.out.println("TestWeather_3 : cityWeatherInfo = "+cityWeatherInfo);
-
-    }
-
-    @Test
-    public void TestWeather_4() throws Exception {
-        // test for a random city and get weatherbit information using city-name, state, country
-
-        myDB = new DataHelper(context);
-
-        // Get random city
-        Map<String, String> city = myDB.getRandomCity();
-        String cityId = city.get("cityId");
-        String cityName = city.get("cityName");
-        String citi = city.get("city");
-        String state = city.get("state");
-        String country = city.get("country");
-        //String latitude = city.get("latitude").toString();
-        //String longitude = city.get("longitude").toString();
-
-        String welcome = "\n\t\tWelcome to the "+cityName;
-        cityWeatherInfo = "Detailed information about the weather of "+cityName;
-
-        assertNotNull("TestWeather_4: City is null",citi);
-        assertTrue("TestWeather_4 : City has no value",citi.trim().replace(' ','+').length()>0);
-
-        String tempWeatherBitUrl = "";
-        tempWeatherBitUrl  = weatherBitUrl +  "?city=" + citi.trim().replace(' ','+') ;
-        if (state!=null && state.trim().length()>0)
-            tempWeatherBitUrl  = tempWeatherBitUrl +  "," + state.trim().replace(' ','+') ;
-        if (country!=null && country.trim().length()>0)
-            tempWeatherBitUrl  = tempWeatherBitUrl +  "&country=" + country.trim().replace(' ','+') ;
-        tempWeatherBitUrl  = tempWeatherBitUrl  +  "&key=" + weatherBitAppid;
-
-        new GetJSONTaskWeatherBit().execute(tempWeatherBitUrl); //execute asynctask object this will resolve NetworkOnMainThreadExcection
-
-        // Create new intent
-        Intent intent = new Intent();
-        intent.setClass(context, DetailsActivity.class);
-        intent.putExtra("cityId", cityId);
-        intent.putExtra("city", cityName);
-        intent.putExtra("username", "test_user");
-
-        // Launch DetailsActivity with custom intent
-        ActivityScenario.launch(intent);
-        Thread.sleep(SLEEP);
-        onView(withText("SHOW WEATHER")).perform(click());
-        Thread.sleep(SLEEP);
-
-        // Checks for welcome message
-        onView(withId(R.id.weatherWelcomeText)).check(matches(withText(welcome)));
-
-        // Checks for city weather information
-        onView(withId(R.id.weatherInfo)).check(matches(withText(cityWeatherInfo)));
-
-        System.out.println("TestWeather_4 : welcome message = "+welcome);
-        System.out.println("TestWeather_4 : cityWeatherInfo = "+cityWeatherInfo);
-
-    }
-*/
 
     @Test
     public void TestWeather_chicago() throws Exception {
@@ -290,8 +185,8 @@ TestWeather_3 and TestWeather_4 failed, not sure why, so excluded.
         // Checks for city weather information
         onView(withId(R.id.weatherInfo)).check(matches(withText(cityWeatherInfo)));
 
-        System.out.println("TestWeather_2 : welcome message = "+welcome);
-        System.out.println("TestWeather_2 : cityWeatherInfo = "+cityWeatherInfo);
+        System.out.println("TestWeather_chicago : welcome message = "+welcome);
+        System.out.println("TestWeather_chicago : cityWeatherInfo = "+cityWeatherInfo);
 
     }
     private class GetJSONTaskWeatherBit extends AsyncTask<String, Void, String> {
