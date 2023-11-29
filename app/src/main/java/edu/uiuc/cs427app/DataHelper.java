@@ -262,4 +262,30 @@ public class DataHelper extends SQLiteOpenHelper {
         randomCity.put("longitude", lon.toString());
         return randomCity;
     }
+
+    public CityTable getCitiesByCity(String city, String state, String country) {
+        // Retrieves a map of city IDs to city names for cities associated with the given user ID
+        SQLiteDatabase myDB = this.getWritableDatabase();
+        Cursor cursor = myDB.rawQuery("select * from cities c  " +
+                " where citi_name = ? and state = ? and country = ? ", new String[]{city,state,country} );
+
+        CityTable cityTable = new CityTable();
+
+        int cityIdColIdx = cursor.getColumnIndex("citi_id");
+        int cityNameColIdx = cursor.getColumnIndex("citi_name");
+        int stateColIdx = cursor.getColumnIndex("state");
+        int countryColIdx = cursor.getColumnIndex("country");
+        int latitudeColIdx = cursor.getColumnIndex("latitude");
+        int longitudeColIdx = cursor.getColumnIndex("longitude");
+        while (cursor.moveToNext()) {
+            cityTable.setCitiId(cursor.getString(cityIdColIdx));
+            cityTable.setCitiName(cursor.getString(cityNameColIdx));
+            cityTable.setState(cursor.getString(stateColIdx));
+            cityTable.setCountry(cursor.getString(countryColIdx));
+            cityTable.setLatitude(cursor.getDouble(latitudeColIdx));
+            cityTable.setLongitude(cursor.getDouble(longitudeColIdx));
+        }
+        cursor.close();
+        return cityTable;
+    }
 }
