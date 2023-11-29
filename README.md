@@ -163,13 +163,17 @@ Meeting notes: A touchbase meeting on progress. Map team was able to get the map
 
 <b>Week 8</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: kf17, luxiay2, uroy, meng29, rkuhlm2
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: Briefly discussed about Instrumented testing and assigned tasks to team members. Everyone is assigned a test to write. </br>
+Team deadline for the test codes is Tues 11/28. Please create a PR on Github for your branch when done! </br>
+Everyone needs to sign up to be a reviewer for a teammate's PR for their test. </br>
+This milestone is not due until Dec 3rd however that date coincides with the due date for the book report, so we'd like to finish this milestone early - let's set a goal to be done with everything by 11/30.</br>
+For details: https://docs.google.com/document/d/1318BHJ5Y6G8ZpsXov1DZcA3HxCFVqpcr_mqbICH-H-U/edit
 </br>
 | NetID | Progress from last week | Tasks for next week |
 | ---------------| --------------------------------| ----------------------|
-| | | |
+| meng29 | Completed Milestone 4. | Test removing an existing city. |
 | | | |
 | | | |
 | | | |
@@ -181,9 +185,9 @@ Meeting notes: Explain the overall team progress and a summary of discussion
 
 <b>Week 9</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: THANKSGIVING HOLIDAY. NO MEETING.
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: THANKSGIVING HOLIDAY. NO MEETING.
 </br>
 | NetID | Progress from last week | Tasks for next week |
 | ---------------| --------------------------------| ----------------------|

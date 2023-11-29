@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
 public class LoginActivity extends AppCompatActivity {
     EditText username,password;
     Button btnLogin, btnResignup;
@@ -31,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String user = username.getText().toString();
                 String pass = password.getText().toString();
-                
+
                 // Check if username and password are not empty
                 if (user.equals("") || pass.equals("")){
                     Toast.makeText(LoginActivity.this, "All fields are required", Toast.LENGTH_SHORT).show();
