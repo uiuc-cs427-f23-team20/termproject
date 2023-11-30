@@ -1,10 +1,15 @@
 package edu.uiuc.cs427app;
 
+import android.content.Context;
 import android.view.View;
 
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
+import androidx.test.core.app.ApplicationProvider;
+import androidx.test.platform.app.InstrumentationRegistry;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -24,13 +29,29 @@ import static org.hamcrest.CoreMatchers.is;
 @RunWith(AndroidJUnit4.class)
 public class TestLoginInstrumentedTest {
     @Rule
+    // ActivityScenarioRule launches Login activity.
     public ActivityScenarioRule<LoginActivity> activityScenarioRule =
             new ActivityScenarioRule<>(LoginActivity.class);
+
+    edu.uiuc.cs427app.DataHelper myDB;
     private View decorView;
+
+    @Before
+    public void setUp() {
+        Context context = InstrumentationRegistry.getInstrumentation().getTargetContext();
+        myDB = new edu.uiuc.cs427app.DataHelper(context);
+        // Insert test data
+        myDB.insertTestData("test_user", "test");
+    }
+
+    @After
+    public void tearDown() {
+        // Clean up the test database after the test
+        myDB.close();
+    }
 
     @Test
     public void testValidLogin() throws InterruptedException {
-        //myDB = new edu.uiuc.cs427app.DataHelper(context);
         String TEST_USERNAME = "test_user";
         String TEST_PASSWORD = "test";
 
