@@ -87,6 +87,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             Button viewDetailButton = new Button(this);
             viewDetailButton.setLayoutParams(buttonParams);
             viewDetailButton.setText("View Detail");
+            viewDetailButton.setTag(userCities.get(cityId));
 //            int finalUiConfig = uiConfig ? 1:0;
             boolean  finalUiConfig = uiConfig;
             viewDetailButton.setOnClickListener(new View.OnClickListener() {
