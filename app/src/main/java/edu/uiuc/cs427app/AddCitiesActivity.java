@@ -55,6 +55,7 @@ public class AddCitiesActivity extends AppCompatActivity implements View.OnClick
             Button addCityButton = new Button(this);
             addCityButton.setLayoutParams(buttonParams);
             addCityButton.setText("Add City");
+            addCityButton.setTag(citiesIdToName.get(cityId));
             addCityButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
