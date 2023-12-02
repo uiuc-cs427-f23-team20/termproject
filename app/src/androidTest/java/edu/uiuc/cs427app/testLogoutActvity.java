@@ -2,9 +2,12 @@ package edu.uiuc.cs427app;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.*;
+import static org.junit.Assert.assertEquals;
 
 import android.content.Intent;
+import android.widget.TextView;
 import androidx.test.core.app.ActivityScenario;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.platform.app.InstrumentationRegistry;
@@ -26,11 +29,13 @@ public class testLogoutActvity {
         // Click on the logout button
         onView(withId(R.id.btnLogout)).perform(click());
 
-
         // Check if the LoginActivity is displayed after logout
-        ActivityScenario<LoginActivity> loginActivityScenario =
+         ActivityScenario<LoginActivity> loginActivityScenario =
                 ActivityScenario.launch(new Intent(InstrumentationRegistry.getInstrumentation().getTargetContext(), LoginActivity.class));
 
+        // Assertion: Check if a specific button is present in the LoginActivity
+        onView(withId(R.id.btnLogin))
+                .check(matches(isDisplayed()));
     }
 }
 
