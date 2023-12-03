@@ -29,8 +29,8 @@ import java.util.Map;
 
 public class TestAddCity {
     private Context context = InstrumentationRegistry.getInstrumentation().getTargetContext();
-    private String testUsername = "test"; // replace this with the user you need to test
-    private String testCityName = "Chicago, IL"; // replace this with the city you need to test
+    private String testUsername = "test";
+    private String testCityName = "Chicago, IL";
     @Before
     public void launchHomeActivity() {
         Intent intent = new Intent(context, HomeActivity.class);
