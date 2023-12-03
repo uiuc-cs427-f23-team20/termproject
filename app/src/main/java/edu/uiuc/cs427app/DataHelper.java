@@ -291,4 +291,15 @@ public class DataHelper extends SQLiteOpenHelper {
         randomCity.put("longitude", lon.toString());
         return randomCity;
     }
+
+    public void insertTestData(String testUser, String testPassword) {
+        // Insert test user data into the users table
+        SQLiteDatabase myDB = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("netid", testUser);
+        contentValues.put("password", testPassword);
+
+        myDB.insert("users", null, contentValues);
+        myDB.close(); // Closing database connection
+    }
 }
