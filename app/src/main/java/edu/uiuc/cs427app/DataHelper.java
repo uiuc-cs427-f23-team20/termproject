@@ -248,6 +248,32 @@ public class DataHelper extends SQLiteOpenHelper {
         cursor.close();
         return cityTable;
     }
+    public CityTable getCitiesByCity(String city, String state, String country) {
+        // Retrieves a cityTable of city IDs to city names for cities associated with the given city,  state,  country
+        SQLiteDatabase myDB = this.getWritableDatabase();
+        Cursor cursor = myDB.rawQuery("select * from cities c  " +
+                " where citi_name = ? and state = ? and country = ? ", new String[]{city,state,country} );
+
+
+        CityTable cityTable = new CityTable();
+
+        int cityIdColIdx = cursor.getColumnIndex("citi_id");
+        int cityNameColIdx = cursor.getColumnIndex("citi_name");
+        int stateColIdx = cursor.getColumnIndex("state");
+        int countryColIdx = cursor.getColumnIndex("country");
+        int latitudeColIdx = cursor.getColumnIndex("latitude");
+        int longitudeColIdx = cursor.getColumnIndex("longitude");
+        while (cursor.moveToNext()) {
+            cityTable.setCitiId(cursor.getString(cityIdColIdx));
+            cityTable.setCitiName(cursor.getString(cityNameColIdx));
+            cityTable.setState(cursor.getString(stateColIdx));
+            cityTable.setCountry(cursor.getString(countryColIdx));
+            cityTable.setLatitude(cursor.getDouble(latitudeColIdx));
+            cityTable.setLongitude(cursor.getDouble(longitudeColIdx));
+        }
+        cursor.close();
+        return cityTable;
+    }
     public Map<String, String> getRandomCity() {
         // Retrieves random record from cities table
         Map<String, String> randomCity = new HashMap<>();
@@ -256,6 +282,9 @@ public class DataHelper extends SQLiteOpenHelper {
         cursor.moveToFirst();
         randomCity.put("cityId", cursor.getString(0));
         randomCity.put("cityName", cursor.getString(1) + ", " + cursor.getString(2));
+        randomCity.put("city", cursor.getString(1)); // for weather
+        randomCity.put("state", cursor.getString(2)); // for weather
+        randomCity.put("country", cursor.getString(3)); // for weather
         Double lat = cursor.getDouble(4);
         Double lon = cursor.getDouble(5);
         randomCity.put("latitude", lat.toString());

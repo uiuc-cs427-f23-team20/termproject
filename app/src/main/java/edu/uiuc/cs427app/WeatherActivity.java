@@ -22,7 +22,8 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
 
     private final String weatherBitUrl = "https://api.weatherbit.io/v2.0/current";
     //private final String weatherBitAppid = "01a058676dd44bbba82977c15214baaa"; 50 calls/day
-    private final String weatherBitAppid = "7efdeda16cf74897aa506f15f96e4ab6"; //1500 calls/day for 21 days till Nov-31, then change key
+    //private final String weatherBitAppid = "7efdeda16cf74897aa506f15f96e4ab6"; //1500 calls/day for 21 days till Nov-31, then change key
+    private final String weatherBitAppid = "9b82aa4ab7bc4343a00e2b83854024ff" ;  //activated on 11/28 for 21 days
 
     String cityWeatherInfo="";
     TextView weatherInfoMessage;

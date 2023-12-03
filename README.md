@@ -203,9 +203,9 @@ Meeting notes: THANKSGIVING HOLIDAY. NO MEETING.
 
 <b>Week 10</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: kf17, luxiay2, uroy, meng29, zerenlu2, rkuhlm2, tonyj2
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: Final meeting. Works almost done. Just a quick wrapup.
 </br>
 | NetID | Progress from last week | Tasks for next week |
 | ---------------| --------------------------------| ----------------------|
