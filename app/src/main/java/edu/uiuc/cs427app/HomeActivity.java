@@ -118,6 +118,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         Button buttonAddCity = new Button(this);
         buttonAddCity.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
         buttonAddCity.setText("Add a location");
+        buttonAddCity.setTag("addCityButton");
         buttonAddCity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
