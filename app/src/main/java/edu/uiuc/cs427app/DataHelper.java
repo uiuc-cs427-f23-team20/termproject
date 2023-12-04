@@ -223,7 +223,7 @@ public class DataHelper extends SQLiteOpenHelper {
         cursor.close();
         return coordinates;
     }
-    
+
     public CityTable getCitiesByCityId(String cityId) {
         // Retrieves a map of city IDs to city names for cities associated with the given user ID
         SQLiteDatabase myDB = this.getWritableDatabase();
@@ -292,4 +292,14 @@ public class DataHelper extends SQLiteOpenHelper {
         return randomCity;
     }
 
+    public void insertTestData(String testUser, String testPassword) {
+        // Insert test user data into the users table
+        SQLiteDatabase myDB = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("netid", testUser);
+        contentValues.put("password", testPassword);
+
+        myDB.insert("users", null, contentValues);
+        myDB.close(); // Closing database connection
+    }
 }
