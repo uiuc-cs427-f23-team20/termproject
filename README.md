@@ -175,7 +175,7 @@ For details: https://docs.google.com/document/d/1318BHJ5Y6G8ZpsXov1DZcA3HxCFVqpc
 | ---------------| --------------------------------| ----------------------|
 | meng29 | Completed Milestone 4. | Test removing an existing city. |
 | tonyj2 | Completed Milestone 4 | Write tests on adding a city |
-| | | |
+| kf17 | Completed Milestone 4 (made submission video). | Write test on map implementation. |
 | | | |
 | | | |
 | | | |
@@ -210,7 +210,7 @@ Meeting notes: Final meeting. Works almost done. Just a quick wrapup.
 | NetID | Progress from last week | Tasks for next week |
 | ---------------| --------------------------------| ----------------------|
 | tonyj2 | Finished writing tests for adding a new city | Review other member's PR on tests |
-| | | |
+| kf17 | Wrote instrumented test for map implementation. | Reviewed Uttam and Sicheng's PRs. Recorded submission video. |
 | | | |
 | | | |
 | | | |
