@@ -223,7 +223,7 @@ public class DataHelper extends SQLiteOpenHelper {
         cursor.close();
         return coordinates;
     }
-    
+
     public CityTable getCitiesByCityId(String cityId) {
         // Retrieves a map of city IDs to city names for cities associated with the given user ID
         SQLiteDatabase myDB = this.getWritableDatabase();
