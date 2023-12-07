@@ -177,7 +177,7 @@ For details: https://docs.google.com/document/d/1318BHJ5Y6G8ZpsXov1DZcA3HxCFVqpc
 | tonyj2 | Completed Milestone 4 | Write tests on adding a city |
 | kf17 | Completed Milestone 4 (made submission video). | Write test on map implementation. |
 | uroy | Completed Milestone 4 | Write test on weather implementation. |
-| | | |
+|luxiay2 |Completed Milestone 4 | Write test on login.|
 | | | |
 | | | |
 | | | |
@@ -212,7 +212,7 @@ Meeting notes: Final meeting. Works almost done. Just a quick wrapup.
 | tonyj2 | Finished writing tests for adding a new city | Review other member's PR on tests |
 | kf17 | Wrote instrumented test for map implementation. | Reviewed Uttam and Sicheng's PRs. Recorded submission video. |
 | uroy | Wrote instrumented test for weather implementation.| Review Tony's PR on tests|
-| | | |
+|luxiay2 |Wrote instrumented test for login. |Review Kharissa's PR on tests. |
 | | | |
 | | | |
 | | | |
